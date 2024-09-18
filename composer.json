@@ -39,6 +39,8 @@
         "symfony/translation": "7.1.*",
         "symfony/twig-bundle": "7.1.*",
         "symfony/ux-icons": "2.x-dev",
+        "symfony/ux-leaflet-map": "2.x-dev",
+        "symfony/ux-map": "2.x-dev",
         "symfony/ux-turbo": "^2.19",
         "symfony/ux-twig-component": "2.x-dev",
         "symfony/validator": "7.1.*",
@@ -118,6 +120,27 @@
         "ux-icons": {
             "type": "path",
             "url": "../../workspace-os/symfony-ux/src/Icons",
+            "options": {
+                "symlink": true
+            }
+        },
+        "ux-map": {
+            "type": "path",
+            "url": "../../workspace-os/symfony-ux/src/Map",
+            "options": {
+                "symlink": true
+            }
+        },
+        "ux-leaflet-map": {
+            "type": "path",
+            "url": "../../workspace-os/symfony-ux/src/Map/src/Bridge/Leaflet",
+            "options": {
+                "symlink": true
+            }
+        },
+        "ux-google-map": {
+            "type": "path",
+            "url": "../../workspace-os/symfony-ux/src/Map/src/Bridge/Google",
             "options": {
                 "symlink": true
             }
