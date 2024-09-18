@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello Icons2148Controller!{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+    <twig:AutocastInt min="1" max="10" />
+    <twig:AutocastInt :min="1" :max="10" />
+    <twig:AutocastInt min="{{ 1 }}" max="{{ 10 }}" />
+    
+    {{ ux_icon('bi:plus') }}
+    <twig:UX:Icon name="bi:plus" />
+    
+    {{ ux_icon('bi:plus', { width: '20', height: '20'}) }}
+    <twig:UX:Icon name="bi:plus" width="20" height="20" />
+    <twig:UX:Icon name="bi:plus" width="20" :height="20" />
+    <twig:UX:Icon name="bi:plus" width="20" :height="20 / 2" />
+    <br>
+
+    {{ ux_icon('mdi:minus') }}
+    <twig:UX:Icon name="mdi:minus" />
+    
+    {{ ux_icon('mdi:minus', { width: '20', height: '20'}) }}
+    <twig:UX:Icon name="mdi:minus" width="20" height="20" />
+    <twig:UX:Icon name="mdi:minus" width="20" :height="20" />
+</div>
+{% endblock %}

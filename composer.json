@@ -38,7 +38,9 @@
         "symfony/string": "7.1.*",
         "symfony/translation": "7.1.*",
         "symfony/twig-bundle": "7.1.*",
+        "symfony/ux-icons": "2.x-dev",
         "symfony/ux-turbo": "^2.19",
+        "symfony/ux-twig-component": "2.x-dev",
         "symfony/validator": "7.1.*",
         "symfony/web-link": "7.1.*",
         "symfony/yaml": "7.1.*",
@@ -104,5 +106,21 @@
         "symfony/phpunit-bridge": "^7.1",
         "symfony/stopwatch": "7.1.*",
         "symfony/web-profiler-bundle": "7.1.*"
+    },
+    "repositories": {
+        "ux-twig": {
+            "type": "path",
+            "url": "../../workspace-os/symfony-ux/src/TwigComponent",
+            "options": {
+                "symlink": true
+            }
+        },
+        "ux-icons": {
+            "type": "path",
+            "url": "../../workspace-os/symfony-ux/src/Icons",
+            "options": {
+                "symlink": true
+            }
+        }
     }
 }
