@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}UX Lab{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+    <h1>Welcome to the UX Lab 🔬</h1>
+
+    <ul>
+        {% for route_name in routes_names %}
+           <li>{{ route_name }}: <a href="{{ path(route_name) }}">{{ path(route_name) }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
