@@ -38,4 +38,13 @@ return [
     '@symfony/ux-map/abstract-map-controller' => [
         'path' => '@symfony/ux-map/abstract_map_controller.js',
     ],
+    '@googlemaps/js-api-loader' => [
+        'version' => '1.16.8',
+    ],
+    '@symfony/ux-google-map' => [
+        'path' => '@symfony/ux-google-map/map_controller.js',
+    ],
+    '@symfony/ux-leaflet-map' => [
+        'path' => '@symfony/ux-leaflet-map/map_controller.js',
+    ],
 ];

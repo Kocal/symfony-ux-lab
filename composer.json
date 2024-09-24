@@ -34,10 +34,11 @@
         "symfony/runtime": "7.1.*",
         "symfony/security-bundle": "7.1.*",
         "symfony/serializer": "7.1.*",
-        "symfony/stimulus-bundle": "^2.19",
+        "symfony/stimulus-bundle": "2.x-dev",
         "symfony/string": "7.1.*",
         "symfony/translation": "7.1.*",
         "symfony/twig-bundle": "7.1.*",
+        "symfony/ux-google-map": "2.x-dev",
         "symfony/ux-icons": "2.x-dev",
         "symfony/ux-leaflet-map": "2.x-dev",
         "symfony/ux-map": "2.x-dev",
@@ -141,6 +142,13 @@
         "ux-google-map": {
             "type": "path",
             "url": "../../workspace-os/symfony-ux/src/Map/src/Bridge/Google",
+            "options": {
+                "symlink": true
+            }
+        },
+        "ux-stimulus-bundle": {
+            "type": "path",
+            "url": "../../workspace-os/symfony-ux/src/StimulusBundle",
             "options": {
                 "symlink": true
             }

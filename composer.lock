@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3f8917dc2701fcb69cf28d5f002fa4ab",
+    "content-hash": "0c79817230d1975cd3bc8fe0c3db790d",
     "packages": [
         {
             "name": "composer/semver",
@@ -6172,17 +6172,11 @@
         },
         {
             "name": "symfony/stimulus-bundle",
-            "version": "v2.19.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/stimulus-bundle.git",
-                "reference": "5e2e1aff3e7cff2875e2f901437543fda9ca9910"
-            },
+            "version": "2.x-dev",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/stimulus-bundle/zipball/5e2e1aff3e7cff2875e2f901437543fda9ca9910",
-                "reference": "5e2e1aff3e7cff2875e2f901437543fda9ca9910",
-                "shasum": ""
+                "type": "path",
+                "url": "../../workspace-os/symfony-ux/src/StimulusBundle",
+                "reference": "90214fbd0b2a2e0f5ab6c67439c7e95eb843b246"
             },
             "require": {
                 "php": ">=8.1",
@@ -6206,7 +6200,11 @@
                     "Symfony\\UX\\StimulusBundle\\": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "Symfony\\UX\\StimulusBundle\\Tests\\": "tests/"
+                }
+            },
             "license": [
                 "MIT"
             ],
@@ -6220,24 +6218,10 @@
             "keywords": [
                 "symfony-ux"
             ],
-            "support": {
-                "source": "https://github.com/symfony/stimulus-bundle/tree/v2.19.0"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2024-07-30T19:26:23+00:00"
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
         },
         {
             "name": "symfony/stopwatch",
@@ -6834,6 +6818,58 @@
                 }
             ],
             "time": "2024-05-31T14:59:31+00:00"
+        },
+        {
+            "name": "symfony/ux-google-map",
+            "version": "2.x-dev",
+            "dist": {
+                "type": "path",
+                "url": "../../workspace-os/symfony-ux/src/Map/src/Bridge/Google",
+                "reference": "68357c7f976ce4666c79b283511bb3d2c0daf371"
+            },
+            "require": {
+                "php": ">=8.3",
+                "symfony/ux-map": "^2.19"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "^6.4|^7.0"
+            },
+            "type": "symfony-ux-map-bridge",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\UX\\Map\\Bridge\\Google\\": "src/"
+                },
+                "exclude-from-classmap": []
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Symfony\\UX\\Map\\Bridge\\Google\\Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hugo Alliaume",
+                    "email": "hugo@alliau.me"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony UX Map GoogleMaps Bridge",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "google-maps",
+                "map",
+                "symfony-ux"
+            ],
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
         },
         {
             "name": "symfony/ux-icons",
@@ -10080,6 +10116,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "symfony/stimulus-bundle": 20,
+        "symfony/ux-google-map": 20,
         "symfony/ux-icons": 20,
         "symfony/ux-leaflet-map": 20,
         "symfony/ux-map": 20,

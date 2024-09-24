@@ -248,6 +248,15 @@
             "templates/base.html.twig"
         ]
     },
+    "symfony/ux-google-map": {
+        "version": "2.9999999",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "2.19",
+            "ref": "98be4bcd10c1c4e5c05543b278755b7532c9c2e5"
+        }
+    },
     "symfony/ux-icons": {
         "version": "2.9999999",
         "recipe": {
