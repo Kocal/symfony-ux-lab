@@ -47,4 +47,28 @@ return [
     '@symfony/ux-leaflet-map' => [
         'path' => '@symfony/ux-leaflet-map/map_controller.js',
     ],
+    'intl-messageformat' => [
+        'version' => '10.5.14',
+    ],
+    'tslib' => [
+        'version' => '2.6.2',
+    ],
+    '@formatjs/icu-messageformat-parser' => [
+        'version' => '2.7.8',
+    ],
+    '@formatjs/fast-memoize' => [
+        'version' => '2.2.0',
+    ],
+    '@formatjs/icu-skeleton-parser' => [
+        'version' => '1.8.2',
+    ],
+    '@symfony/ux-translator' => [
+        'path' => '@symfony/ux-translator/translator_controller.js',
+    ],
+    '@app/translations' => [
+        'path' => './var/translations/index.js',
+    ],
+    '@app/translations/configuration' => [
+        'path' => './var/translations/configuration.js',
+    ],
 ];
