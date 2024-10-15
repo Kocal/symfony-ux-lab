@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7349485047ea0f148b1503cb33f50d33",
+    "content-hash": "59a9a09be2777b29f1634ff6c680ffe9",
     "packages": [
         {
             "name": "composer/semver",
@@ -6825,10 +6825,11 @@
             "dist": {
                 "type": "path",
                 "url": "../../workspace-os/symfony-ux/src/Map/src/Bridge/Google",
-                "reference": "68357c7f976ce4666c79b283511bb3d2c0daf371"
+                "reference": "482b99956436f89b999dd0375ca38fa7ba5cf91e"
             },
             "require": {
                 "php": ">=8.3",
+                "symfony/stimulus-bundle": "^2.18.1",
                 "symfony/ux-map": "^2.19"
             },
             "require-dev": {
@@ -6877,7 +6878,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../workspace-os/symfony-ux/src/Icons",
-                "reference": "f3398b95b8f578831ae904eceeb8442654a6d548"
+                "reference": "9660d20ea65ec597d486d8f2d20579a8d0591cbd"
             },
             "require": {
                 "php": ">=8.1",
@@ -6885,7 +6886,8 @@
                 "symfony/twig-bundle": "^6.4|^7.0"
             },
             "conflict": {
-                "symfony/flex": "<1.13"
+                "symfony/flex": "<1.13",
+                "symfony/ux-twig-component": "<2.21"
             },
             "require-dev": {
                 "psr/log": "^2|^3",
@@ -6949,10 +6951,11 @@
             "dist": {
                 "type": "path",
                 "url": "../../workspace-os/symfony-ux/src/Map/src/Bridge/Leaflet",
-                "reference": "34e21340b75b7a7c5d0f98a8dab6f293236edc02"
+                "reference": "86bd8f17a6ac83a2af0736281e79563e3317c3a4"
             },
             "require": {
                 "php": ">=8.3",
+                "symfony/stimulus-bundle": "^2.18.1",
                 "symfony/ux-map": "^2.19"
             },
             "require-dev": {
@@ -6996,16 +6999,96 @@
             }
         },
         {
+            "name": "symfony/ux-live-component",
+            "version": "2.x-dev",
+            "dist": {
+                "type": "path",
+                "url": "../../workspace-os/symfony-ux/src/LiveComponent",
+                "reference": "368db73ce759b87e248525f30928b9e316c04c8f"
+            },
+            "require": {
+                "php": ">=8.1",
+                "symfony/property-access": "^5.4.5|^6.0|^7.0",
+                "symfony/stimulus-bundle": "^2.9",
+                "symfony/ux-twig-component": "^2.8",
+                "twig/twig": "^3.8.0"
+            },
+            "conflict": {
+                "symfony/config": "<5.4.0"
+            },
+            "require-dev": {
+                "doctrine/annotations": "^1.0",
+                "doctrine/collections": "^1.6.8|^2.0",
+                "doctrine/doctrine-bundle": "^2.4.3",
+                "doctrine/orm": "^2.9.4",
+                "doctrine/persistence": "^2.5.2|^3.0",
+                "phpdocumentor/reflection-docblock": "5.x-dev",
+                "symfony/dependency-injection": "^5.4|^6.0|^7.0",
+                "symfony/expression-language": "^5.4|^6.0|^7.0",
+                "symfony/form": "^5.4|^6.0|^7.0",
+                "symfony/framework-bundle": "^5.4|^6.0|^7.0",
+                "symfony/options-resolver": "^5.4|^6.0|^7.0",
+                "symfony/phpunit-bridge": "^6.1|^7.0",
+                "symfony/property-info": "^5.4|^6.0|^7.0",
+                "symfony/security-bundle": "^5.4|^6.0|^7.0",
+                "symfony/serializer": "^5.4|^6.0|^7.0",
+                "symfony/twig-bundle": "^5.4|^6.0|^7.0",
+                "symfony/validator": "^5.4|^6.0|^7.0",
+                "zenstruck/browser": "^1.2.0",
+                "zenstruck/foundry": "^2.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "thanks": {
+                    "name": "symfony/ux",
+                    "url": "https://github.com/symfony/ux"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\UX\\LiveComponent\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Symfony\\UX\\LiveComponent\\Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Live components for Symfony",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "components",
+                "symfony-ux",
+                "twig"
+            ],
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
             "name": "symfony/ux-map",
             "version": "2.x-dev",
             "dist": {
                 "type": "path",
                 "url": "../../workspace-os/symfony-ux/src/Map",
-                "reference": "d4acfc2c9de1d0c56833cd0e4eac9556531549c6"
+                "reference": "888f58cd7ba025ff37dfbe0d585826473a169f9a"
             },
             "require": {
                 "php": ">=8.3",
                 "symfony/stimulus-bundle": "^2.18.1"
+            },
+            "conflict": {
+                "symfony/ux-twig-component": "<2.21"
             },
             "require-dev": {
                 "symfony/asset-mapper": "^6.4|^7.0",
@@ -10332,6 +10415,7 @@
         "symfony/ux-google-map": 20,
         "symfony/ux-icons": 20,
         "symfony/ux-leaflet-map": 20,
+        "symfony/ux-live-component": 20,
         "symfony/ux-map": 20,
         "symfony/ux-translator": 20,
         "symfony/ux-twig-component": 20
@@ -10343,6 +10427,6 @@
         "ext-ctype": "*",
         "ext-iconv": "*"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }

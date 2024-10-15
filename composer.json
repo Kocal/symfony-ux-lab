@@ -41,6 +41,7 @@
         "symfony/ux-google-map": "2.x-dev",
         "symfony/ux-icons": "2.x-dev",
         "symfony/ux-leaflet-map": "2.x-dev",
+        "symfony/ux-live-component": "2.x-dev",
         "symfony/ux-map": "2.x-dev",
         "symfony/ux-translator": "2.x-dev",
         "symfony/ux-turbo": "^2.19",
@@ -158,6 +159,20 @@
         "ux-translator": {
             "type": "path",
             "url": "../../workspace-os/symfony-ux/src/Translator",
+            "options": {
+                "symlink": true
+            }
+        },
+        "ux-twig-component": {
+            "type": "path",
+            "url": "../../workspace-os/symfony-ux/src/TwigComponent",
+            "options": {
+                "symlink": true
+            }
+        },
+        "ux-live-component": {
+            "type": "path",
+            "url": "../../workspace-os/symfony-ux/src/LiveComponent",
             "options": {
                 "symlink": true
             }

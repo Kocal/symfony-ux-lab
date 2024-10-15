@@ -71,4 +71,7 @@ return [
     '@app/translations/configuration' => [
         'path' => './var/translations/configuration.js',
     ],
+    '@symfony/ux-live-component' => [
+        'path' => '@symfony/ux-live-component/live_controller.js',
+    ],
 ];
