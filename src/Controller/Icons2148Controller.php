@@ -11,8 +11,6 @@ class Icons2148Controller extends AbstractController
     #[Route('/icons2148', name: 'app_icons2148')]
     public function index(): Response
     {
-        return $this->render('icons2148/index.html.twig', [
-            'controller_name' => 'Icons2148Controller',
-        ]);
+        return $this->render('icons2148/index.html.twig');
     }
 }
