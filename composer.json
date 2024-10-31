@@ -43,6 +43,7 @@
         "symfony/ux-leaflet-map": "2.x-dev",
         "symfony/ux-live-component": "2.x-dev",
         "symfony/ux-map": "2.x-dev",
+        "symfony/ux-svelte": "2.x-dev",
         "symfony/ux-translator": "2.x-dev",
         "symfony/ux-turbo": "^2.19",
         "symfony/ux-twig-component": "2.x-dev",
@@ -173,6 +174,13 @@
         "ux-live-component": {
             "type": "path",
             "url": "../../workspace-os/symfony-ux/src/LiveComponent",
+            "options": {
+                "symlink": true
+            }
+        },
+        "ux-svelte": {
+            "type": "path",
+            "url": "../../workspace-os/symfony-ux/src/Svelte",
             "options": {
                 "symlink": true
             }
