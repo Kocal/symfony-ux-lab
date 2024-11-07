@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SvelteController!{% endblock %}
+
+{% block body %}
+    <h1>Svelte 5 lab</h1>
+    <ul>
+        <li>To install and build for Svelte 4: <code>sf console importmap:require svelte@4.2.19 svelte/internal@4.2.19 svelte/internal/disclose-version@4.2.19 && pnpm add -D svelte@4.2.19 && pnpm run build-svelte</code></li>
+        <li>To install and build for Svelte 5: <code>sf console importmap:require svelte svelte/internal/client svelte/internal/disclose-version && pnpm add -D svelte && pnpm run build-svelte@5.1.6</code></li>
+    </ul>
+    
+    <p>If everything is working, you should see a "Hello" component below:</p>
+    <div {{ svelte_component('Hello') }}>
+        <p>Loading...</p>
+    </div>
+{% endblock %}

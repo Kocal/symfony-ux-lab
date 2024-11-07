@@ -75,9 +75,21 @@ return [
         'path' => '@symfony/ux-live-component/live_controller.js',
     ],
     'svelte/internal' => [
-        'version' => '3.59.2',
+        'version' => '4.2.19',
     ],
     '@symfony/ux-svelte' => [
         'path' => '@symfony/ux-svelte/loader.js',
+    ],
+    'svelte' => [
+        'version' => '5.1.9',
+    ],
+    'svelte/internal/client' => [
+        'version' => '5.1.9',
+    ],
+    'svelte/internal/disclose-version' => [
+        'version' => '5.1.8',
+    ],
+    'esm-env' => [
+        'version' => '1.1.4',
     ],
 ];
