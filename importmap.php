@@ -75,7 +75,7 @@ return [
         'path' => '@symfony/ux-live-component/live_controller.js',
     ],
     'svelte/internal' => [
-        'version' => '4.2.19',
+        'version' => '3.59.2',
     ],
     '@symfony/ux-svelte' => [
         'path' => '@symfony/ux-svelte/loader.js',

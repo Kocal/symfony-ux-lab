@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f79b63f2583ad041f5e117b2e01d635d",
+    "content-hash": "0302ccbdeb4cbfc47264fe8be63cee9d",
     "packages": [
         {
             "name": "composer/semver",
@@ -7004,10 +7004,11 @@
             "dist": {
                 "type": "path",
                 "url": "../../workspace-os/symfony-ux/src/LiveComponent",
-                "reference": "368db73ce759b87e248525f30928b9e316c04c8f"
+                "reference": "dd76b787e04a54affda061f35eec89ff29695231"
             },
             "require": {
                 "php": ">=8.1",
+                "symfony/deprecation-contracts": "^2.5|^3.0",
                 "symfony/property-access": "^5.4.5|^6.0|^7.0",
                 "symfony/stimulus-bundle": "^2.9",
                 "symfony/ux-twig-component": "^2.8",
@@ -10472,7 +10473,14 @@
             "time": "2024-03-03T12:36:25+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "package": "symfony/ux-google-map",
+            "version": "2.9999999.9999999.9999999-dev",
+            "alias": "2.22",
+            "alias_normalized": "2.22.0.0"
+        }
+    ],
     "minimum-stability": "stable",
     "stability-flags": {
         "symfony/stimulus-bundle": 20,
