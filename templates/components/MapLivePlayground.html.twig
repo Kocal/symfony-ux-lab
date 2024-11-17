@@ -1,0 +1,17 @@
+<div{{ attributes.defaults({
+    style: 'display: flex; max-width: 1200px; margin: 0 auto; gap: 8px'
+}) }}>
+
+    <div style="flex: 1">
+        {{ ux_map(map, { style: 'height: 600px'}) }}
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 2px">
+        <button type="button" data-action="live#action" data-live-action-param="randomCenter">Random Center</button>
+        <button type="button" data-action="live#action" data-live-action-param="centerOnLyon">Center on Lyon</button>
+        <button type="button" data-action="live#action" data-live-action-param="centerOnParis">Center on Paris</button>
+        <button type="button" data-action="live#action" data-live-action-param="randomZoom">Random zoom</button>
+        <button type="button" data-action="live#action" data-live-action-param="addRandomMarker">Add random marker</button>
+        <button type="button" data-action="live#action" data-live-action-param="addRandomPolygon">Add random polygon</button>
+    </div>
+
+</div>
