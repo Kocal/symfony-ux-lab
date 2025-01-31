@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0302ccbdeb4cbfc47264fe8be63cee9d",
+    "content-hash": "36dacd9a3d7a582b330a5b282b399c16",
     "packages": [
         {
             "name": "composer/semver",
@@ -6831,6 +6831,70 @@
             "time": "2024-11-07T15:49:33+00:00"
         },
         {
+            "name": "symfony/ux-chartjs",
+            "version": "2.x-dev",
+            "dist": {
+                "type": "path",
+                "url": "../../workspace-os/symfony-ux/src/Chartjs",
+                "reference": "e4b67562acbf6e57f1712dc7e9593faef6dda307"
+            },
+            "require": {
+                "php": ">=8.1",
+                "symfony/config": "^5.4|^6.0|^7.0",
+                "symfony/dependency-injection": "^5.4|^6.0|^7.0",
+                "symfony/http-kernel": "^5.4|^6.0|^7.0",
+                "symfony/stimulus-bundle": "^2.9.1"
+            },
+            "conflict": {
+                "symfony/flex": "<1.13"
+            },
+            "require-dev": {
+                "symfony/framework-bundle": "^5.4|^6.0|^7.0",
+                "symfony/phpunit-bridge": "^5.4|^6.0|^7.0",
+                "symfony/twig-bundle": "^5.4|^6.0|^7.0",
+                "symfony/var-dumper": "^5.4|^6.0|^7.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "thanks": {
+                    "name": "symfony/ux",
+                    "url": "https://github.com/symfony/ux"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\UX\\Chartjs\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Symfony\\UX\\Chartjs\\Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Titouan Galopin",
+                    "email": "galopintitouan@gmail.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Chart.js integration for Symfony",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "symfony-ux"
+            ],
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
             "name": "symfony/ux-google-map",
             "version": "2.x-dev",
             "dist": {
@@ -10496,6 +10560,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "symfony/stimulus-bundle": 20,
+        "symfony/ux-chartjs": 20,
         "symfony/ux-google-map": 20,
         "symfony/ux-icons": 20,
         "symfony/ux-leaflet-map": 20,

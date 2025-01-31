@@ -95,4 +95,7 @@ return [
     'leaflet-editable' => [
         'version' => '1.3.0',
     ],
+    'chart.js' => [
+        'version' => '3.9.1',
+    ],
 ];

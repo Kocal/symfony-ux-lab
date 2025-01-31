@@ -248,6 +248,9 @@
             "templates/base.html.twig"
         ]
     },
+    "symfony/ux-chartjs": {
+        "version": "2.x-dev"
+    },
     "symfony/ux-google-map": {
         "version": "2.9999999",
         "recipe": {

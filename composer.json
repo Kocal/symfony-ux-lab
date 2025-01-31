@@ -38,6 +38,7 @@
         "symfony/string": "7.1.*",
         "symfony/translation": "7.1.*",
         "symfony/twig-bundle": "7.1.*",
+        "symfony/ux-chartjs": "2.x-dev",
         "symfony/ux-google-map": "2.x-dev as 2.22",
         "symfony/ux-icons": "2.x-dev",
         "symfony/ux-leaflet-map": "2.x-dev",
@@ -181,6 +182,13 @@
         "ux-svelte": {
             "type": "path",
             "url": "../../workspace-os/symfony-ux/src/Svelte",
+            "options": {
+                "symlink": true
+            }
+        },
+        "ux-chartjs": {
+            "type": "path",
+            "url": "../../workspace-os/symfony-ux/src/Chartjs",
             "options": {
                 "symlink": true
             }
