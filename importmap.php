@@ -92,4 +92,7 @@ return [
     'esm-env' => [
         'version' => '1.1.4',
     ],
+    'leaflet-editable' => [
+        'version' => '1.3.0',
+    ],
 ];
