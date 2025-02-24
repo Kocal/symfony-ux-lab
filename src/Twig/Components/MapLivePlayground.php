@@ -6,13 +6,17 @@ use Symfony\UX\LiveComponent\Attribute\AsLiveComponent;
 use Symfony\UX\LiveComponent\Attribute\LiveAction;
 use Symfony\UX\LiveComponent\DefaultActionTrait;
 use Symfony\UX\Map\Bridge\Google\GoogleOptions;
+use Symfony\UX\Map\Elements;
 use Symfony\UX\Map\InfoWindow;
 use Symfony\UX\Map\Live\ComponentWithMapTrait;
 use Symfony\UX\Map\Map;
 use Symfony\UX\Map\Marker;
+use Symfony\UX\Map\Markers;
 use Symfony\UX\Map\Point;
 use Symfony\UX\Map\Polygon;
+use Symfony\UX\Map\Polygons;
 use Symfony\UX\Map\Polyline;
+use Symfony\UX\Map\Polylines;
 
 #[AsLiveComponent]
 final class MapLivePlayground
@@ -101,7 +105,7 @@ final class MapLivePlayground
     #[LiveAction]
     public function addRandomMarker(): void
     {
-        $cities = require __dir__ . '/../../../CONFIG/cities.php';
+        $cities = require __dir__ . '/../../../config/cities.php';
         $city = $cities[array_rand($cities)];
 
         //$this->mapRepository->save(/* ... */);
@@ -118,7 +122,7 @@ final class MapLivePlayground
     {
         $map = $this->getMap();
         $reflPropertyMarkers = new \ReflectionProperty($map, 'markers');
-        $reflPropertyMarkers->setValue($map, []);
+        $reflPropertyMarkers->setValue($map, Markers::fromArray([]));
 
         $map
             ->addMarker(new Marker(position: new Point(48.8566, 2.3522), title: 'Paris', infoWindow: new InfoWindow('Paris'),))
@@ -134,7 +138,7 @@ final class MapLivePlayground
     #[LiveAction]
     public function addRandomPolygon(): void
     {
-        $cities = require __dir__ . '/../../../CONFIG/cities.php';
+        $cities = require __dir__ . '/../../../config/cities.php';
         $edgesCount = random_int(3, 6);
 
         $points = [];
@@ -152,7 +156,7 @@ final class MapLivePlayground
     #[LiveAction]
     public function addRandomPolyline(): void
     {
-        $cities = require __dir__ . '/../../../CONFIG/cities.php';
+        $cities = require __dir__ . '/../../../config/cities.php';
         $edgesCount = random_int(3, 6);
 
         $points = [];
@@ -165,5 +169,47 @@ final class MapLivePlayground
             points: $points,
             infoWindow: new InfoWindow('Polyline'),
         ));
+    }
+
+    #[LiveAction]
+    public function removeFirstMarker(): void
+    {
+        /** @var Markers $markers */
+        $markers = \Closure::bind(fn() => $this->markers, $this->getMap(), Map::class)();
+        /** @var \SplObjectStorage $elements */
+        $elements = \Closure::bind(fn() => $this->elements, $markers, Elements::class)();
+
+        foreach ($elements as $element) {
+            $this->getMap()->removeMarker($element);
+            break;
+        }
+    }
+
+    #[LiveAction]
+    public function removeFirstPolygon(): void
+    {
+        /** @var Polygons $polygons */
+        $polygons = \Closure::bind(fn() => $this->polygons, $this->getMap(), Map::class)();
+        /** @var \SplObjectStorage $elements */
+        $elements = \Closure::bind(fn() => $this->elements, $polygons, Elements::class)();
+
+        foreach ($elements as $element) {
+            $this->getMap()->removePolygon($element);
+            break;
+        }
+    }
+
+    #[LiveAction]
+    public function removeFirstPolyline(): void
+    {
+        /** @var Polylines $polylines */
+        $polylines = \Closure::bind(fn() => $this->polylines, $this->getMap(), Map::class)();
+        /** @var \SplObjectStorage $elements */
+        $elements = \Closure::bind(fn() => $this->elements, $polylines, Elements::class)();
+
+        foreach ($elements as $element) {
+            $this->getMap()->removePolyline($element);
+            break;
+        }
     }
 }
