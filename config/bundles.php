@@ -20,4 +20,5 @@ return [
     Symfony\UX\LiveComponent\LiveComponentBundle::class => ['all' => true],
     Symfony\UX\Svelte\SvelteBundle::class => ['all' => true],
     Symfony\UX\Chartjs\ChartjsBundle::class => ['all' => true],
+    Symfony\UX\React\ReactBundle::class => ['all' => true],
 ];

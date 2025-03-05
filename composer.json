@@ -44,6 +44,7 @@
         "symfony/ux-leaflet-map": "2.x-dev",
         "symfony/ux-live-component": "2.x-dev",
         "symfony/ux-map": "2.x-dev",
+        "symfony/ux-react": "^2.23",
         "symfony/ux-svelte": "2.x-dev",
         "symfony/ux-translator": "2.x-dev",
         "symfony/ux-turbo": "^2.19",

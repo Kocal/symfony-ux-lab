@@ -1,3 +1,4 @@
+import { registerReactControllerComponents } from '@symfony/ux-react';
 import { registerSvelteControllerComponents } from '@symfony/ux-svelte';
 import './bootstrap.js';
 /*
@@ -11,3 +12,4 @@ import './styles/app.css';
 console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
 
 registerSvelteControllerComponents();
+registerReactControllerComponents();

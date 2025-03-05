@@ -27,6 +27,12 @@
                 }
             }
         },
+        "@symfony/ux-react": {
+            "react": {
+                "enabled": true,
+                "fetch": "eager"
+            }
+        },
         "@symfony/ux-svelte": {
             "svelte": {
                 "enabled": true,

@@ -98,4 +98,16 @@ return [
     'chart.js' => [
         'version' => '3.9.1',
     ],
+    'react' => [
+        'version' => '18.3.1',
+    ],
+    'react-dom' => [
+        'version' => '18.3.1',
+    ],
+    'scheduler' => [
+        'version' => '0.23.2',
+    ],
+    '@symfony/ux-react' => [
+        'path' => './vendor/symfony/ux-react/assets/dist/loader.js',
+    ],
 ];
