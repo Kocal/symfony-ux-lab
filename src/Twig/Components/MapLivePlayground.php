@@ -7,6 +7,7 @@ use Symfony\UX\LiveComponent\Attribute\LiveAction;
 use Symfony\UX\LiveComponent\DefaultActionTrait;
 use Symfony\UX\Map\Bridge\Google\GoogleOptions;
 use Symfony\UX\Map\Elements;
+use Symfony\UX\Map\Icon\Icon;
 use Symfony\UX\Map\InfoWindow;
 use Symfony\UX\Map\Live\ComponentWithMapTrait;
 use Symfony\UX\Map\Map;
@@ -125,9 +126,9 @@ final class MapLivePlayground
         $reflPropertyMarkers->setValue($map, Markers::fromArray([]));
 
         $map
-            ->addMarker(new Marker(position: new Point(48.8566, 2.3522), title: 'Paris', infoWindow: new InfoWindow('Paris'),))
-            ->addMarker(new Marker(position: new Point(45.75, 4.85), title: 'Lyon', infoWindow: new InfoWindow('Lyon'),))
-            ->addMarker(new Marker(position: new Point(43.6047, 1.4442), title: 'Toulouse', infoWindow: new InfoWindow('Toulouse')))
+            ->addMarker(new Marker(position: new Point(48.8566, 2.3522), title: 'Paris', infoWindow: new InfoWindow('Paris'), icon: Icon::url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/geo-alt.svg')))
+            ->addMarker(new Marker(position: new Point(45.75, 4.85), title: 'Lyon', infoWindow: new InfoWindow('Lyon'), icon: Icon::ux('fa:map-marker')))
+            ->addMarker(new Marker(position: new Point(43.6047, 1.4442), title: 'Toulouse', infoWindow: new InfoWindow('Toulouse'), icon: Icon::ux('fa:map-marker') ))
         ;
 
         for ($i = 0; $i < 5; $i++) {
