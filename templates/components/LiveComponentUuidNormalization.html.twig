@@ -1,0 +1,10 @@
+<div{{ attributes }}>
+    <ul>
+        <li>UUID v4: {{ uuidV4 }}</li>
+        <li>UUID v7: {{ uuidV7 }}</li>
+        <li>ULID: {{ ulid }}</li>
+    </ul>
+    {{ dateTime.format(constant('DATE_ATOM')) }}
+
+    <button data-action="live#action" data-live-action-param="refresh">Refresh</button>
+</div>

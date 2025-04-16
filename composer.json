@@ -38,6 +38,7 @@
         "symfony/string": "7.1.*",
         "symfony/translation": "7.1.*",
         "symfony/twig-bundle": "7.1.*",
+        "symfony/uid": "7.1.*",
         "symfony/ux-chartjs": "2.x-dev",
         "symfony/ux-google-map": "2.x-dev as 2.22",
         "symfony/ux-icons": "2.x-dev",
@@ -114,7 +115,6 @@
         "symfony/maker-bundle": "^1.0",
         "symfony/phpunit-bridge": "^7.1",
         "symfony/stopwatch": "7.1.*",
-        "symfony/ux-toolkit": "2.x-dev",
         "symfony/web-profiler-bundle": "7.1.*"
     },
     "repositories": {
