@@ -114,6 +114,7 @@
         "symfony/maker-bundle": "^1.0",
         "symfony/phpunit-bridge": "^7.1",
         "symfony/stopwatch": "7.1.*",
+        "symfony/ux-toolkit": "2.x-dev",
         "symfony/web-profiler-bundle": "7.1.*"
     },
     "repositories": {
@@ -190,6 +191,13 @@
         "ux-chartjs": {
             "type": "path",
             "url": "../../workspace-os/symfony-ux/src/Chartjs",
+            "options": {
+                "symlink": true
+            }
+        },
+        "ux-toolkit": {
+            "type": "path",
+            "url": "../../workspace-os/symfony-ux/src/Toolkit",
             "options": {
                 "symlink": true
             }

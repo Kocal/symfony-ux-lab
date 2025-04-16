@@ -21,4 +21,5 @@ return [
     Symfony\UX\Svelte\SvelteBundle::class => ['all' => true],
     Symfony\UX\Chartjs\ChartjsBundle::class => ['all' => true],
     Symfony\UX\React\ReactBundle::class => ['all' => true],
+    Symfony\UX\Toolkit\UXToolkitBundle::class => ['dev' => true, 'test' => true],
 ];

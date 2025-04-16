@@ -329,6 +329,9 @@
             "assets/svelte/controllers/Hello.svelte"
         ]
     },
+    "symfony/ux-toolkit": {
+        "version": "2.x-dev"
+    },
     "symfony/ux-translator": {
         "version": "2.9999999",
         "recipe": {
