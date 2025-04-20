@@ -40,7 +40,7 @@
         "symfony/twig-bundle": "7.1.*",
         "symfony/uid": "7.1.*",
         "symfony/ux-chartjs": "2.x-dev",
-        "symfony/ux-google-map": "2.x-dev as 2.22",
+        "symfony/ux-google-map": "2.23.0",
         "symfony/ux-icons": "2.x-dev",
         "symfony/ux-leaflet-map": "2.x-dev",
         "symfony/ux-live-component": "2.x-dev",
@@ -142,13 +142,6 @@
         "ux-leaflet-map": {
             "type": "path",
             "url": "../../workspace-os/symfony-ux/src/Map/src/Bridge/Leaflet",
-            "options": {
-                "symlink": true
-            }
-        },
-        "ux-google-map": {
-            "type": "path",
-            "url": "../../workspace-os/symfony-ux/src/Map/src/Bridge/Google",
             "options": {
                 "symlink": true
             }

@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+dependencies:
+  '@symfony/ux-google-map':
+    specifier: ^2.24.0
+    version: 2.24.0(@googlemaps/js-api-loader@1.16.8)(@hotwired/stimulus@3.2.2)
+
 devDependencies:
   '@babel/cli':
     specifier: ^7.25.6
@@ -282,6 +287,14 @@ packages:
       '@babel/helper-validator-identifier': 7.25.9
     dev: true
 
+  /@googlemaps/js-api-loader@1.16.8:
+    resolution: {integrity: sha512-CROqqwfKotdO6EBjZO/gQGVTbeDps5V7Mt9+8+5Q+jTg5CRMi3Ii/L9PmV3USROrt2uWxtGzJHORmByxyo9pSQ==}
+    dev: false
+
+  /@hotwired/stimulus@3.2.2:
+    resolution: {integrity: sha512-eGeIqNOQpXoPAIP7tC1+1Yc1yl1xnwYqg+3mzqxyrbE5pg5YFBZcA6YoTiByJB6DKAEsiWtl6tjTJS4IYtbB7A==}
+    dev: false
+
   /@jridgewell/gen-mapping@0.3.8:
     resolution: {integrity: sha512-imAbBGkb+ebQyxKgzv5Hu2nmROxoDOXHh80evxdoXNOrvAnVx7zimzc1Oo5h9RlfV4vPXaE2iM5pOFbvOCClWA==}
     engines: {node: '>=6.0.0'}
@@ -325,6 +338,16 @@ packages:
     dependencies:
       acorn: 8.14.1
     dev: true
+
+  /@symfony/ux-google-map@2.24.0(@googlemaps/js-api-loader@1.16.8)(@hotwired/stimulus@3.2.2):
+    resolution: {integrity: sha512-LBXYtG4iLt63ccVQxOymeN5mpWis9197UIVyBIYQaIli8Cff4SfCthPH0hSm31Q+9/DhvdTjPEvzGooZC6FYkQ==}
+    peerDependencies:
+      '@googlemaps/js-api-loader': ^1.16.6
+      '@hotwired/stimulus': ^3.0.0
+    dependencies:
+      '@googlemaps/js-api-loader': 1.16.8
+      '@hotwired/stimulus': 3.2.2
+    dev: false
 
   /@types/estree@1.0.6:
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
