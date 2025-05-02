@@ -27,56 +27,69 @@ final class MapLivePlayground
 
     protected function instantiateMap(): Map
     {
-        return (new Map())
+        $map = (new Map())
             ->options(new GoogleOptions(
                 mapId: '2b2d73ba4b8c7b41',
                 backgroundColor: '#fddfdd',
             ))
-            ->center(new Point(48.8566, 2.3522))
-            ->zoom(7)
-            ->addMarker(new Marker(
-                position: new Point(48.8566, 2.3522),
-                title: 'Paris',
-                infoWindow: new InfoWindow('Paris'),
-            ))
-            ->addMarker(new Marker(
-                position: new Point(45.75, 4.85),
-                title: 'Lyon',
-                infoWindow: new InfoWindow('Lyon'),
-            ))
-            ->addMarker(new Marker(
-                position: new Point(43.6047, 1.4442),
-                title: 'Toulouse',
-                infoWindow: new InfoWindow('Toulouse'),
-            ))
-            ->addPolygon(new Polygon(
-                points: [
-                    new Point(48.8566, 2.3522),
-                    new Point(45.75, 4.85),
-                    new Point(43.6047, 1.4442),
-                ],
-            ))
-            ->addPolygon(new Polygon(
-                points: [
-                    new Point(1.4442, 43.6047),
-                    new Point(4.85, 45.75),
-                    new Point(2.3522, 48.8566),
-                ],
-                infoWindow: new InfoWindow('Polygon', extra: ['foo' => 'bar']),
-                extra: ['fillColor' => '#ff0000'],
-            )) // */
-            //*
-            ->addPolyline(new Polyline(
-            // Rennes to Paris to Vienna
-                points: [
-                    new Point(48.1173, -1.6778),
-                    new Point(48.8566, 2.3522),
-                    new Point(48.2082, 16.3738),
-                ],
-                infoWindow: new InfoWindow('Polyline', extra: ['foo' => 'bar']),
-                extra: ['strokeColor' => '#ff0000'],
-            )) // */
-            ;
+            ->center(new Point(46.603354, 1.888334))
+            ->zoom(6)
+            //->addMarker(new Marker(
+            //    position: new Point(48.8566, 2.3522),
+            //    title: 'Paris',
+            //    infoWindow: new InfoWindow('Paris'),
+            //))
+            //->addMarker(new Marker(
+            //    position: new Point(45.75, 4.85),
+            //    title: 'Lyon',
+            //    infoWindow: new InfoWindow('Lyon'),
+            //))
+            //->addMarker(new Marker(
+            //    position: new Point(43.6047, 1.4442),
+            //    title: 'Toulouse',
+            //    infoWindow: new InfoWindow('Toulouse'),
+            //))
+            //->addPolygon(new Polygon(
+            //    points: [
+            //        new Point(48.8566, 2.3522),
+            //        new Point(45.75, 4.85),
+            //        new Point(43.6047, 1.4442),
+            //    ],
+            //))
+            //->addPolygon(new Polygon(
+            //    points: [
+            //        new Point(1.4442, 43.6047),
+            //        new Point(4.85, 45.75),
+            //        new Point(2.3522, 48.8566),
+            //    ],
+            //    infoWindow: new InfoWindow('Polygon', extra: ['foo' => 'bar']),
+            //    extra: ['fillColor' => '#ff0000'],
+            //)) // */
+            ////*
+            //->addPolyline(new Polyline(
+            //// Rennes to Paris to Vienna
+            //    points: [
+            //        new Point(48.1173, -1.6778),
+            //        new Point(48.8566, 2.3522),
+            //        new Point(48.2082, 16.3738),
+            //    ],
+            //    infoWindow: new InfoWindow('Polyline', extra: ['foo' => 'bar']),
+            //    extra: ['strokeColor' => '#ff0000'],
+            //)) // */
+        ;
+
+        $cities = require __dir__ . '/../../../config/cities.php';
+        for ($i = 0; $i < 2000; $i++) {
+            $city = $cities[array_rand($cities)];
+            $map->addMarker(new Marker(
+                position: new Point($city['latitude'], $city['longitude']),
+                title: $city['label'],
+                infoWindow: new InfoWindow($city['label']),
+                icon: Icon::url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/geo-alt.svg'),
+            ));
+        }
+
+        return $map;
     }
 
     #[LiveAction]
@@ -109,12 +122,11 @@ final class MapLivePlayground
         $cities = require __dir__ . '/../../../config/cities.php';
         $city = $cities[array_rand($cities)];
 
-        //$this->mapRepository->save(/* ... */);
-
         $this->getMap()->addMarker(new Marker(
             position: new Point($city['latitude'], $city['longitude']),
             title: $city['label'],
             infoWindow: new InfoWindow($city['label']),
+            icon: Icon::ux('fa:map-marker'),
         ));
     }
 

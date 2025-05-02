@@ -17,7 +17,7 @@ class MapIconsController extends AbstractController
     {
         
         $map = (new Map())
-            ->center(new Point(48.8566, 2.3522))
+            ->center(new Point(46.603354, 1.888334))
             ->zoom(6)
         ;
 
