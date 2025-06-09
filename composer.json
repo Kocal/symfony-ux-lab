@@ -38,6 +38,7 @@
         "symfony/string": "7.1.*",
         "symfony/translation": "7.1.*",
         "symfony/twig-bundle": "7.1.*",
+        "symfony/type-info": "7.2.2",
         "symfony/uid": "7.1.*",
         "symfony/ux-chartjs": "2.x-dev",
         "symfony/ux-google-map": "2.x-dev",

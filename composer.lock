@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "782201d99dac9220b2bb2ed7d1552f4d",
+    "content-hash": "3ddc40932f4961628ed16c05887df251",
     "packages": [
         {
             "name": "composer/semver",
@@ -6898,31 +6898,24 @@
         },
         {
             "name": "symfony/type-info",
-            "version": "v7.1.10",
+            "version": "v7.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/type-info.git",
-                "reference": "8f980bdd1d6a2834503afbfcf3f39de8133e48fe"
+                "reference": "3b5a17470fff0034f25fd4287cbdaa0010d2f749"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/type-info/zipball/8f980bdd1d6a2834503afbfcf3f39de8133e48fe",
-                "reference": "8f980bdd1d6a2834503afbfcf3f39de8133e48fe",
+                "url": "https://api.github.com/repos/symfony/type-info/zipball/3b5a17470fff0034f25fd4287cbdaa0010d2f749",
+                "reference": "3b5a17470fff0034f25fd4287cbdaa0010d2f749",
                 "shasum": ""
             },
             "require": {
                 "php": ">=8.2",
                 "psr/container": "^1.1|^2.0"
             },
-            "conflict": {
-                "phpstan/phpdoc-parser": "<1.0",
-                "symfony/dependency-injection": "<6.4",
-                "symfony/property-info": "<6.4"
-            },
             "require-dev": {
-                "phpstan/phpdoc-parser": "^1.0|^2.0",
-                "symfony/dependency-injection": "^6.4|^7.0",
-                "symfony/property-info": "^6.4|^7.0"
+                "phpstan/phpdoc-parser": "^1.0|^2.0"
             },
             "type": "library",
             "autoload": {
@@ -6960,7 +6953,7 @@
                 "type"
             ],
             "support": {
-                "source": "https://github.com/symfony/type-info/tree/v7.1.10"
+                "source": "https://github.com/symfony/type-info/tree/v7.2.2"
             },
             "funding": [
                 {
@@ -6976,7 +6969,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-12-11T12:11:39+00:00"
+            "time": "2024-12-20T13:38:37+00:00"
         },
         {
             "name": "symfony/uid",
@@ -7307,7 +7300,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../workspace-os/symfony-ux/src/LiveComponent",
-                "reference": "8151ec14987d4275ad7ed1f9a98a19a62c14550b"
+                "reference": "994171229d1e91a5de57e882681ca330816069aa"
             },
             "require": {
                 "php": ">=8.1",
@@ -7315,11 +7308,13 @@
                 "symfony/property-access": "^5.4.5|^6.0|^7.0",
                 "symfony/property-info": "^5.4|^6.0|^7.0",
                 "symfony/stimulus-bundle": "^2.9",
-                "symfony/ux-twig-component": "^2.8",
-                "twig/twig": "^3.8.0"
+                "symfony/ux-twig-component": "^2.25.1",
+                "twig/twig": "^3.10.3"
             },
             "conflict": {
-                "symfony/config": "<5.4.0"
+                "symfony/config": "<5.4.0",
+                "symfony/property-info": "~7.0.0",
+                "symfony/type-info": "<7.2"
             },
             "require-dev": {
                 "doctrine/annotations": "^1.0",
@@ -7386,7 +7381,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../workspace-os/symfony-ux/src/Map",
-                "reference": "00a85841e4ded3ba3518fcf7704b4830962f2b42"
+                "reference": "0878ec5e3e7051309a35142814a738045d6b212f"
             },
             "require": {
                 "php": ">=8.1",
@@ -7396,6 +7391,8 @@
                 "symfony/ux-twig-component": "<2.21"
             },
             "require-dev": {
+                "phpunit/phpunit": "^9.6.22",
+                "spatie/phpunit-snapshot-assertions": "^4.2.17",
                 "symfony/asset-mapper": "^6.4|^7.0",
                 "symfony/framework-bundle": "^6.4|^7.0",
                 "symfony/phpunit-bridge": "^7.2",
@@ -7593,7 +7590,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../workspace-os/symfony-ux/src/Toolkit",
-                "reference": "35e6304660a614ec6a73d275c65690d37f10ef7a"
+                "reference": "ca814368698a74478af53baf542abc7ae1f22bee"
             },
             "require": {
                 "php": ">=8.1",
@@ -7601,7 +7598,7 @@
                 "symfony/filesystem": "^6.4|^7.0",
                 "symfony/framework-bundle": "^6.4|^7.0",
                 "symfony/twig-bundle": "^6.4|^7.0",
-                "symfony/ux-twig-component": "^2.23",
+                "symfony/ux-twig-component": "^2.25.1",
                 "symfony/yaml": "^6.4|^7.0",
                 "twig/twig": "^3.0"
             },
@@ -7609,10 +7606,14 @@
                 "symfony/ux-twig-component": "<2.21"
             },
             "require-dev": {
+                "phpunit/phpunit": "^9.6.22",
+                "spatie/phpunit-snapshot-assertions": "^4.2.17",
                 "symfony/finder": "6.4|^7.0",
                 "symfony/http-client": "6.4|^7.0",
-                "symfony/phpunit-bridge": "^6.4|^7.0",
+                "symfony/phpunit-bridge": "^7.2",
                 "symfony/stopwatch": "^6.4|^7.0",
+                "symfony/ux-icons": "^2.18",
+                "tales-from-a-dev/twig-tailwind-extra": "^0.4.0",
                 "twig/extra-bundle": "^3.19|^4.0",
                 "twig/html-extra": "^3.19",
                 "vincentlanglet/twig-cs-fixer": "^3.5",
@@ -7620,7 +7621,6 @@
             },
             "bin": [
                 "bin/ux-toolkit-kit-create",
-                "bin/ux-toolkit-kit-lint",
                 "bin/ux-toolkit-kit-debug"
             ],
             "type": "symfony-bundle",
@@ -7838,7 +7838,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../workspace-os/symfony-ux/src/TwigComponent",
-                "reference": "b847d8c364ef0186addc8bc34cbd3dd3d9519752"
+                "reference": "bd37e0574382181d9d37131b7fef89c7ad95a8f6"
             },
             "require": {
                 "php": ">=8.1",
@@ -7846,7 +7846,7 @@
                 "symfony/deprecation-contracts": "^2.2|^3.0",
                 "symfony/event-dispatcher": "^5.4|^6.0|^7.0",
                 "symfony/property-access": "^5.4|^6.0|^7.0",
-                "twig/twig": "^3.8"
+                "twig/twig": "^3.10.3"
             },
             "conflict": {
                 "symfony/config": "<5.4.0"
