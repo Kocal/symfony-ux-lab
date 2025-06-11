@@ -34,6 +34,7 @@ final class MapLivePlayground
             ))
             ->center(new Point(46.603354, 1.888334))
             ->zoom(6)
+            ->fitBoundsToMarkers()
             //->addMarker(new Marker(
             //    position: new Point(48.8566, 2.3522),
             //    title: 'Paris',
@@ -122,6 +123,7 @@ final class MapLivePlayground
         $cities = require __dir__ . '/../../../config/cities.php';
         $city = $cities[array_rand($cities)];
 
+        $this->getMap()->fitBoundsToMarkers(false);
         $this->getMap()->addMarker(new Marker(
             position: new Point($city['latitude'], $city['longitude']),
             title: $city['label'],
