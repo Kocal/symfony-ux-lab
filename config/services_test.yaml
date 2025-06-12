@@ -1,0 +1,7 @@
+services:
+    mercure.hub.default:
+        class: App\Mercure\HubStub
+        arguments:
+            - '%env(MERCURE_PUBLIC_URL)%'
+#        tags:
+#            - mercure.hub
