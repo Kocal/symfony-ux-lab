@@ -23,4 +23,5 @@ return [
     Symfony\UX\React\ReactBundle::class => ['all' => true],
     Symfony\UX\Toolkit\UXToolkitBundle::class => ['all' => true],
     Symfony\Bundle\MercureBundle\MercureBundle::class => ['all' => true],
+    Symfony\UX\Autocomplete\AutocompleteBundle::class => ['all' => true],
 ];
