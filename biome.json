@@ -1,13 +1,18 @@
 {
-  "files": {
-    "ignore": [
-      "assets/vendor/*",
-      "assets/controllers.json",
-      "composer.json",
-      "public/assets/*",
-      "public/bundles/*",
-      "var/cache/*",
-      "vendor/*"
-    ]
-  }
+	"files": {
+		"ignore": [
+			"assets/vendor/*",
+			"assets/controllers.json",
+			"composer.json",
+			"public/assets/*",
+			"public/bundles/*",
+			"var/cache/*",
+			"var/translations/*",
+			"vendor/*",
+			"assets/build/*",
+			"assets/svelte.index.js",
+			"assets/svelte/*",
+			"config/cities.json"
+		]
+	}
 }

@@ -1,20 +1,20 @@
 {
-  "name": "sf-ux-lab",
-  "version": "0.0.1",
-  "private": "true",
-  "type": "module",
-  "scripts": {
-    "build-svelte": "node bin/build-svelte.js",
-    "build-react": "babel assets/react/ --out-dir assets/build/react/ --presets=@babel/preset-react --no-babelrc"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.25.6",
-    "@babel/core": "^7.25.2",
-    "@babel/preset-react": "^7.24.7",
-    "svelte": "^5.1.8"
-  },
-  "packageManager": "pnpm@8.15.9+sha512.499434c9d8fdd1a2794ebf4552b3b25c0a633abcee5bb15e7b5de90f32f47b513aca98cd5cfd001c31f0db454bc3804edccd578501e4ca293a6816166bbd9f81",
-  "dependencies": {
-    "@symfony/ux-google-map": "2.23.0"
-  }
+	"name": "sf-ux-lab",
+	"version": "0.0.1",
+	"private": "true",
+	"type": "module",
+	"scripts": {
+		"build-svelte": "node bin/build-svelte.js",
+		"build-react": "babel assets/react/ --out-dir assets/build/react/ --presets=@babel/preset-react --no-babelrc"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.25.6",
+		"@babel/core": "^7.25.2",
+		"@babel/preset-react": "^7.24.7",
+		"svelte": "^5.1.8"
+	},
+	"packageManager": "pnpm@8.15.9+sha512.499434c9d8fdd1a2794ebf4552b3b25c0a633abcee5bb15e7b5de90f32f47b513aca98cd5cfd001c31f0db454bc3804edccd578501e4ca293a6816166bbd9f81",
+	"dependencies": {
+		"@symfony/ux-google-map": "2.23.0"
+	}
 }
