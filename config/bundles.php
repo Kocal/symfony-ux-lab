@@ -24,4 +24,5 @@ return [
     Symfony\UX\Toolkit\UXToolkitBundle::class => ['all' => true],
     Symfony\Bundle\MercureBundle\MercureBundle::class => ['all' => true],
     Symfony\UX\Autocomplete\AutocompleteBundle::class => ['all' => true],
+    Kocal\BiomeJsBundle\KocalBiomeJsBundle::class => ['all' => true],
 ];

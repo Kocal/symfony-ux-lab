@@ -35,6 +35,9 @@
             "migrations/.gitignore"
         ]
     },
+    "kocal/biome-js-bundle": {
+        "version": "dev-main"
+    },
     "phpunit/phpunit": {
         "version": "9.6",
         "recipe": {
