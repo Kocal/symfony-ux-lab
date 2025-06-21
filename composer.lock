@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4af2aeebd72a7825e602072f8b2a5315",
+    "content-hash": "e6098540f78a22d67d82b7302460372f",
     "packages": [
         {
             "name": "composer/semver",
@@ -268,16 +268,16 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "3.9.4",
+            "version": "3.9.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "ec16c82f20be1a7224e65ac67144a29199f87959"
+                "reference": "4a4e2eed3134036ee36a147ee0dac037dfa17868"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/ec16c82f20be1a7224e65ac67144a29199f87959",
-                "reference": "ec16c82f20be1a7224e65ac67144a29199f87959",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/4a4e2eed3134036ee36a147ee0dac037dfa17868",
+                "reference": "4a4e2eed3134036ee36a147ee0dac037dfa17868",
                 "shasum": ""
             },
             "require": {
@@ -290,14 +290,14 @@
                 "psr/log": "^1|^2|^3"
             },
             "require-dev": {
-                "doctrine/coding-standard": "12.0.0",
+                "doctrine/coding-standard": "13.0.0",
                 "fig/log-test": "^1",
                 "jetbrains/phpstorm-stubs": "2023.1",
-                "phpstan/phpstan": "2.1.1",
+                "phpstan/phpstan": "2.1.17",
                 "phpstan/phpstan-strict-rules": "^2",
-                "phpunit/phpunit": "9.6.22",
-                "slevomat/coding-standard": "8.13.1",
-                "squizlabs/php_codesniffer": "3.10.2",
+                "phpunit/phpunit": "9.6.23",
+                "slevomat/coding-standard": "8.16.2",
+                "squizlabs/php_codesniffer": "3.13.1",
                 "symfony/cache": "^5.4|^6.0|^7.0",
                 "symfony/console": "^4.4|^5.4|^6.0|^7.0"
             },
@@ -359,7 +359,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/dbal/issues",
-                "source": "https://github.com/doctrine/dbal/tree/3.9.4"
+                "source": "https://github.com/doctrine/dbal/tree/3.9.5"
             },
             "funding": [
                 {
@@ -375,7 +375,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-01-16T08:28:55+00:00"
+            "time": "2025-06-15T22:40:05+00:00"
         },
         {
             "name": "doctrine/deprecations",
@@ -427,16 +427,16 @@
         },
         {
             "name": "doctrine/doctrine-bundle",
-            "version": "2.14.0",
+            "version": "2.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineBundle.git",
-                "reference": "ca6a7350b421baf7fbdefbf9f4993292ed18effb"
+                "reference": "d88294521a1bca943240adca65fa19ca8a7288c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/ca6a7350b421baf7fbdefbf9f4993292ed18effb",
-                "reference": "ca6a7350b421baf7fbdefbf9f4993292ed18effb",
+                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/d88294521a1bca943240adca65fa19ca8a7288c6",
+                "reference": "d88294521a1bca943240adca65fa19ca8a7288c6",
                 "shasum": ""
             },
             "require": {
@@ -463,9 +463,9 @@
             "require-dev": {
                 "doctrine/annotations": "^1 || ^2",
                 "doctrine/cache": "^1.11 || ^2.0",
-                "doctrine/coding-standard": "^12",
+                "doctrine/coding-standard": "^13",
                 "doctrine/deprecations": "^1.0",
-                "doctrine/orm": "^2.17 || ^3.0",
+                "doctrine/orm": "^2.17 || ^3.1",
                 "friendsofphp/proxy-manager-lts": "^1.0",
                 "phpstan/phpstan": "2.1.1",
                 "phpstan/phpstan-phpunit": "2.0.3",
@@ -529,7 +529,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/DoctrineBundle/issues",
-                "source": "https://github.com/doctrine/DoctrineBundle/tree/2.14.0"
+                "source": "https://github.com/doctrine/DoctrineBundle/tree/2.15.0"
             },
             "funding": [
                 {
@@ -545,7 +545,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-03-22T17:28:21+00:00"
+            "time": "2025-06-16T19:53:58+00:00"
         },
         {
             "name": "doctrine/doctrine-migrations-bundle",
@@ -1066,16 +1066,16 @@
         },
         {
             "name": "doctrine/orm",
-            "version": "3.3.3",
+            "version": "3.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/orm.git",
-                "reference": "1f1891d3e20ef9881e81c2f32c53e9dc88dfc9a7"
+                "reference": "4664373bd0668d71b40cc368b950de95e1dba2f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/orm/zipball/1f1891d3e20ef9881e81c2f32c53e9dc88dfc9a7",
-                "reference": "1f1891d3e20ef9881e81c2f32c53e9dc88dfc9a7",
+                "url": "https://api.github.com/repos/doctrine/orm/zipball/4664373bd0668d71b40cc368b950de95e1dba2f8",
+                "reference": "4664373bd0668d71b40cc368b950de95e1dba2f8",
                 "shasum": ""
             },
             "require": {
@@ -1150,9 +1150,9 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/orm/issues",
-                "source": "https://github.com/doctrine/orm/tree/3.3.3"
+                "source": "https://github.com/doctrine/orm/tree/3.4.0"
             },
-            "time": "2025-05-02T17:42:51+00:00"
+            "time": "2025-06-14T11:47:14+00:00"
         },
         {
             "name": "doctrine/persistence",
@@ -1370,59 +1370,6 @@
                 }
             ],
             "time": "2025-03-06T22:45:56+00:00"
-        },
-        {
-            "name": "kocal/biome-js-bundle",
-            "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "../BiomeJsBundle",
-                "reference": "8e52aafbbdf6d5d70189840908bda7ca66fbb330"
-            },
-            "require": {
-                "php": ">=8.1",
-                "symfony/cache": "^6.4|^7.0",
-                "symfony/console": "^6.4|^7.0",
-                "symfony/http-client": "^6.4|^7.0",
-                "symfony/process": "^6.4|^7.0"
-            },
-            "require-dev": {
-                "phpstan/phpstan": "^1.11",
-                "phpunit/phpunit": "^10.5 || ^11.1",
-                "symfony/framework-bundle": "^6.4|^7.0",
-                "symplify/easy-coding-standard": "^12.1.2"
-            },
-            "type": "symfony-bundle",
-            "autoload": {
-                "psr-4": {
-                    "Kocal\\BiomeJsBundle\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Kocal\\BiomeJsBundle\\Tests\\": "tests/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Hugo Alliaume",
-                    "email": "hugo@alliau.me"
-                }
-            ],
-            "description": "Use Biome.js with Symfony",
-            "keywords": [
-                "biome",
-                "biome.js",
-                "bundle",
-                "symfony"
-            ],
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
         },
         {
             "name": "lcobucci/jwt",
@@ -7361,12 +7308,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/ux-autocomplete.git",
-                "reference": "7bf4388cda00b11046d7d60d597be73633c6cb2c"
+                "reference": "d7087b6b980d479eb3ba01a67d532822e4155238"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/ux-autocomplete/zipball/7bf4388cda00b11046d7d60d597be73633c6cb2c",
-                "reference": "7bf4388cda00b11046d7d60d597be73633c6cb2c",
+                "url": "https://api.github.com/repos/symfony/ux-autocomplete/zipball/d7087b6b980d479eb3ba01a67d532822e4155238",
+                "reference": "d7087b6b980d479eb3ba01a67d532822e4155238",
                 "shasum": ""
             },
             "require": {
@@ -7444,7 +7391,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-06-06T20:27:21+00:00"
+            "time": "2025-06-13T15:39:12+00:00"
         },
         {
             "name": "symfony/ux-chartjs",
@@ -7533,12 +7480,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/ux-google-map.git",
-                "reference": "74d278217e84c73082ff7a05f4635f8be6735e59"
+                "reference": "285fb60b9f1c655afd881a9dc2a1e324b8a036a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/ux-google-map/zipball/74d278217e84c73082ff7a05f4635f8be6735e59",
-                "reference": "74d278217e84c73082ff7a05f4635f8be6735e59",
+                "url": "https://api.github.com/repos/symfony/ux-google-map/zipball/285fb60b9f1c655afd881a9dc2a1e324b8a036a2",
+                "reference": "285fb60b9f1c655afd881a9dc2a1e324b8a036a2",
                 "shasum": ""
             },
             "require": {
@@ -7598,7 +7545,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-06-06T20:27:21+00:00"
+            "time": "2025-06-13T21:13:31+00:00"
         },
         {
             "name": "symfony/ux-icons",
@@ -7696,12 +7643,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/ux-leaflet-map.git",
-                "reference": "6106ab6183d1a05f6122905cccfa232ad762a737"
+                "reference": "ce955a9875ef0dfa58b1bdee054935fcca580a94"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/ux-leaflet-map/zipball/6106ab6183d1a05f6122905cccfa232ad762a737",
-                "reference": "6106ab6183d1a05f6122905cccfa232ad762a737",
+                "url": "https://api.github.com/repos/symfony/ux-leaflet-map/zipball/ce955a9875ef0dfa58b1bdee054935fcca580a94",
+                "reference": "ce955a9875ef0dfa58b1bdee054935fcca580a94",
                 "shasum": ""
             },
             "require": {
@@ -7761,7 +7708,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-06-10T18:59:42+00:00"
+            "time": "2025-06-13T21:13:31+00:00"
         },
         {
             "name": "symfony/ux-live-component",
@@ -7867,12 +7814,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/ux-map.git",
-                "reference": "db5611bfeb7f4d5e6f0a6d688461799c2165ab8a"
+                "reference": "81d4877dcb1ea505a0d37bc2780477d3cb0649a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/ux-map/zipball/db5611bfeb7f4d5e6f0a6d688461799c2165ab8a",
-                "reference": "db5611bfeb7f4d5e6f0a6d688461799c2165ab8a",
+                "url": "https://api.github.com/repos/symfony/ux-map/zipball/81d4877dcb1ea505a0d37bc2780477d3cb0649a3",
+                "reference": "81d4877dcb1ea505a0d37bc2780477d3cb0649a3",
                 "shasum": ""
             },
             "require": {
@@ -7945,7 +7892,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-06-10T19:33:39+00:00"
+            "time": "2025-06-13T21:13:31+00:00"
         },
         {
             "name": "symfony/ux-react",
@@ -8378,12 +8325,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/ux-twig-component.git",
-                "reference": "825e653b34fb48ed2198913c603d80f7632fe9c1"
+                "reference": "55152729444a255b8487f9d539ba1e09ff96bebb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/ux-twig-component/zipball/825e653b34fb48ed2198913c603d80f7632fe9c1",
-                "reference": "825e653b34fb48ed2198913c603d80f7632fe9c1",
+                "url": "https://api.github.com/repos/symfony/ux-twig-component/zipball/55152729444a255b8487f9d539ba1e09ff96bebb",
+                "reference": "55152729444a255b8487f9d539ba1e09ff96bebb",
                 "shasum": ""
             },
             "require": {
@@ -8438,7 +8385,7 @@
                 "twig"
             ],
             "support": {
-                "source": "https://github.com/symfony/ux-twig-component/tree/v2.26.0"
+                "source": "https://github.com/symfony/ux-twig-component/tree/2.x"
             },
             "funding": [
                 {
@@ -8454,7 +8401,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-05-26T06:21:54+00:00"
+            "time": "2025-06-13T12:18:52+00:00"
         },
         {
             "name": "symfony/validator",
@@ -9230,6 +9177,61 @@
                 }
             ],
             "time": "2025-05-26T15:08:54+00:00"
+        },
+        {
+            "name": "kocal/biome-js-bundle",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Kocal/BiomeJsBundle.git",
+                "reference": "a33c1670bd9701f5dcd3a8d8be454f3abaf14530"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Kocal/BiomeJsBundle/zipball/a33c1670bd9701f5dcd3a8d8be454f3abaf14530",
+                "reference": "a33c1670bd9701f5dcd3a8d8be454f3abaf14530",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1",
+                "symfony/console": "^6.4|^7.0",
+                "symfony/filesystem": "^6.4|^7.0",
+                "symfony/http-client": "^6.4|^7.0",
+                "symfony/process": "^6.4|^7.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^1.11",
+                "symfony/framework-bundle": "^6.4|^7.0",
+                "symplify/easy-coding-standard": "^12.1.2"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Kocal\\BiomeJsBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hugo Alliaume",
+                    "email": "hugo@alliau.me"
+                }
+            ],
+            "description": "A Symfony Bundle to easily download and use Biome.js in your Symfony applications, to lint your front assets without needing Node.js.",
+            "keywords": [
+                "biome",
+                "biome.js",
+                "bundle",
+                "symfony"
+            ],
+            "support": {
+                "issues": "https://github.com/Kocal/BiomeJsBundle/issues",
+                "source": "https://github.com/Kocal/BiomeJsBundle/tree/v2.0.0"
+            },
+            "time": "2025-06-19T17:32:54+00:00"
         },
         {
             "name": "masterminds/html5",
@@ -11510,7 +11512,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "kocal/biome-js-bundle": 20,
         "symfony/stimulus-bundle": 20,
         "symfony/ux-autocomplete": 20,
         "symfony/ux-chartjs": 20,

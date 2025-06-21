@@ -24,3 +24,7 @@ node_modules
 /public/assets/
 /assets/vendor/
 ###< symfony/asset-mapper ###
+
+###> kocal/biome-js-bundle ###
+/bin/biome
+###< kocal/biome-js-bundle ###
