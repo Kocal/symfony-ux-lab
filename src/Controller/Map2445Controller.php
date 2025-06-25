@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\UX\Map\InfoWindow;
 use Symfony\UX\Map\Map;
 use Symfony\UX\Map\Marker;
 use Symfony\UX\Map\Point;
@@ -25,7 +26,7 @@ class Map2445Controller extends AbstractController
         $map = (new Map())
             ->center(new Point(48.8566, 2.3522))
             ->zoom(6)
-            ->addMarker(new Marker(position: new Point(48.8566, 2.3522), title: 'Paris'))
+            ->addMarker(new Marker(position: new Point(48.8566, 2.3522), title: 'Paris', infoWindow: new InfoWindow('Paris')))
         ;
 
         return $this->render('map2445/index.html.twig', [

@@ -34,7 +34,7 @@ final class MapLivePlayground
             ))
             ->center(new Point(46.603354, 1.888334))
             ->zoom(6)
-            ->fitBoundsToMarkers()
+//            ->fitBoundsToMarkers()
             //->addMarker(new Marker(
             //    position: new Point(48.8566, 2.3522),
             //    title: 'Paris',
@@ -80,12 +80,12 @@ final class MapLivePlayground
         ;
 
         $cities = require __dir__ . '/../../../config/cities.php';
-        for ($i = 0; $i < 2000; $i++) {
+        for ($i = 0; $i < 1; $i++) {
             $city = $cities[array_rand($cities)];
             $map->addMarker(new Marker(
                 position: new Point($city['latitude'], $city['longitude']),
                 title: $city['label'],
-                infoWindow: new InfoWindow($city['label']),
+                infoWindow: new InfoWindow($city['label'], opened: true),
                 icon: Icon::url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/geo-alt.svg'),
             ));
         }
@@ -133,6 +133,20 @@ final class MapLivePlayground
     }
 
     #[LiveAction]
+    public function removeFirstMarker(): void
+    {
+        /** @var Markers $markers */
+        $markers = \Closure::bind(fn() => $this->markers, $this->getMap(), Map::class)();
+        /** @var \SplObjectStorage $elements */
+        $elements = \Closure::bind(fn() => $this->elements, $markers, Elements::class)();
+
+        foreach ($elements as $element) {
+            $this->getMap()->removeMarker($element);
+            break;
+        }
+    }
+
+    #[LiveAction]
     public function clearAndAddRandomMarkers(): void
     {
         $map = $this->getMap();
@@ -164,40 +178,8 @@ final class MapLivePlayground
 
         $this->getMap()->addPolygon(new Polygon(
             points: $points,
-            infoWindow: new InfoWindow('Polygon'),
+            infoWindow: new InfoWindow('Polygon', opened: true),
         ));
-    }
-
-    #[LiveAction]
-    public function addRandomPolyline(): void
-    {
-        $cities = require __dir__ . '/../../../config/cities.php';
-        $edgesCount = random_int(3, 6);
-
-        $points = [];
-        for ($i = 0; $i < $edgesCount; ++$i) {
-            $city = $cities[array_rand($cities)];
-            $points[] = new Point($city['latitude'], $city['longitude']);
-        }
-
-        $this->getMap()->addPolyline(new Polyline(
-            points: $points,
-            infoWindow: new InfoWindow('Polyline'),
-        ));
-    }
-
-    #[LiveAction]
-    public function removeFirstMarker(): void
-    {
-        /** @var Markers $markers */
-        $markers = \Closure::bind(fn() => $this->markers, $this->getMap(), Map::class)();
-        /** @var \SplObjectStorage $elements */
-        $elements = \Closure::bind(fn() => $this->elements, $markers, Elements::class)();
-
-        foreach ($elements as $element) {
-            $this->getMap()->removeMarker($element);
-            break;
-        }
     }
 
     #[LiveAction]
@@ -215,6 +197,24 @@ final class MapLivePlayground
     }
 
     #[LiveAction]
+    public function addRandomPolyline(): void
+    {
+        $cities = require __dir__ . '/../../../config/cities.php';
+        $edgesCount = random_int(3, 6);
+
+        $points = [];
+        for ($i = 0; $i < $edgesCount; ++$i) {
+            $city = $cities[array_rand($cities)];
+            $points[] = new Point($city['latitude'], $city['longitude']);
+        }
+
+        $this->getMap()->addPolyline(new Polyline(
+            points: $points,
+            infoWindow: new InfoWindow('Polyline', opened: true),
+        ));
+    }
+
+    #[LiveAction]
     public function removeFirstPolyline(): void
     {
         /** @var Polylines $polylines */
@@ -224,6 +224,61 @@ final class MapLivePlayground
 
         foreach ($elements as $element) {
             $this->getMap()->removePolyline($element);
+            break;
+        }
+    }
+
+    #[LiveAction]
+    public function addRandomCircle(): void
+    {
+        $cities = require __dir__ . '/../../../config/cities.php';
+        $city = $cities[array_rand($cities)];
+
+        dump($city);
+        $this->getMap()->addCircle(new \Symfony\UX\Map\Circle(
+            center: new Point($city['latitude'], $city['longitude']),
+            radius: random_int(50_000, 150_000),
+            infoWindow: new InfoWindow($city['label'], opened: true),
+        ));
+    }
+
+    #[LiveAction]
+    public function removeFirstCircle(): void
+    {
+        /** @var \Symfony\UX\Map\Circles $circles */
+        $circles = \Closure::bind(fn() => $this->circles, $this->getMap(), Map::class)();
+        /** @var \SplObjectStorage $elements */
+        $elements = \Closure::bind(fn() => $this->elements, $circles, Elements::class)();
+
+        foreach ($elements as $element) {
+            $this->getMap()->removeCircle($element);
+            break;
+        }
+    }
+
+    #[LiveAction]
+    public function addRandomRectangle(): void
+    {
+        $cities = require __dir__ . '/../../../config/cities.php';
+        $city = $cities[array_rand($cities)];
+
+        $this->getMap()->addRectangle(new \Symfony\UX\Map\Rectangle(
+            southWest: new Point($city['latitude'] - 0.2, $city['longitude'] - 0.2),
+            northEast: new Point($city['latitude'] + 0.2, $city['longitude'] + 0.2),
+            infoWindow: new InfoWindow($city['label'], opened: true),
+        ));
+    }
+
+    #[LiveAction]
+    public function removeFirstRectangle(): void
+    {
+        /** @var \Symfony\UX\Map\Rectangles $rectangles */
+        $rectangles = \Closure::bind(fn() => $this->rectangles, $this->getMap(), Map::class)();
+        /** @var \SplObjectStorage $elements */
+        $elements = \Closure::bind(fn() => $this->elements, $rectangles, Elements::class)();
+
+        foreach ($elements as $element) {
+            $this->getMap()->removeRectangle($element);
             break;
         }
     }

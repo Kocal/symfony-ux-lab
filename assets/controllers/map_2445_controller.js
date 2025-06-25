@@ -5,6 +5,10 @@ export default class extends Controller {
 	connect() {
 		this.element.addEventListener("ux:map:pre-connect", this._onPreConnect);
 		this.element.addEventListener("ux:map:connect", this._onConnect);
+		this.element.addEventListener("ux:map:marker:before-create", (event) => {
+			event.detail.definition.rawOptions = { opacity: 0.5};
+			event.detail.definition.bridgeOptions = { title: 'Paris!!'};
+		});
 	}
 
 	disconnect() {
