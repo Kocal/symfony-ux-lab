@@ -34,6 +34,8 @@ final class MapLivePlayground
             ))
             ->center(new Point(46.603354, 1.888334))
             ->zoom(6)
+            ->minZoom(5)
+            ->maxZoom(7)
 //            ->fitBoundsToMarkers()
             //->addMarker(new Marker(
             //    position: new Point(48.8566, 2.3522),
