@@ -50,7 +50,6 @@
         "symfony/ux-map": "2.x-dev",
         "symfony/ux-react": "2.x-dev",
         "symfony/ux-svelte": "2.x-dev",
-        "symfony/ux-toolkit": "2.x-dev",
         "symfony/ux-translator": "2.x-dev",
         "symfony/ux-turbo": "2.x-dev",
         "symfony/ux-twig-component": "2.x-dev",
@@ -123,9 +122,9 @@
         "symfony/web-profiler-bundle": "7.1.*"
     },
     "repositories": {
-        "ux-toolkit": {
+        "ux-autocomplete": {
             "type": "path",
-            "url": "../../workspace-os/symfony-ux/src/Toolkit",
+            "url": "../../workspace-os/symfony-ux/src/Autocomplete",
             "options": {
                 "symlink": true
             }

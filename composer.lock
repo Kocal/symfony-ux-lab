@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e6098540f78a22d67d82b7302460372f",
+    "content-hash": "3a386a4e311f9db2561e102702c725e5",
     "packages": [
         {
             "name": "composer/semver",
@@ -7305,16 +7305,10 @@
         {
             "name": "symfony/ux-autocomplete",
             "version": "2.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/ux-autocomplete.git",
-                "reference": "d7087b6b980d479eb3ba01a67d532822e4155238"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/ux-autocomplete/zipball/d7087b6b980d479eb3ba01a67d532822e4155238",
-                "reference": "d7087b6b980d479eb3ba01a67d532822e4155238",
-                "shasum": ""
+                "type": "path",
+                "url": "../../workspace-os/symfony-ux/src/Autocomplete",
+                "reference": "1c80e460f59c599e37fbd7338b8a1aae089febf9"
             },
             "require": {
                 "php": ">=8.1",
@@ -7346,12 +7340,11 @@
                 "zenstruck/browser": "^1.1",
                 "zenstruck/foundry": "1.37.*"
             },
-            "default-branch": true,
             "type": "symfony-bundle",
             "extra": {
                 "thanks": {
-                    "url": "https://github.com/symfony/ux",
-                    "name": "symfony/ux"
+                    "name": "symfony/ux",
+                    "url": "https://github.com/symfony/ux"
                 }
             },
             "autoload": {
@@ -7359,7 +7352,11 @@
                     "Symfony\\UX\\Autocomplete\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "Symfony\\UX\\Autocomplete\\Tests\\": "tests/"
+                }
+            },
             "license": [
                 "MIT"
             ],
@@ -7374,24 +7371,10 @@
             "keywords": [
                 "symfony-ux"
             ],
-            "support": {
-                "source": "https://github.com/symfony/ux-autocomplete/tree/2.x"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2025-06-13T15:39:12+00:00"
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
         },
         {
             "name": "symfony/ux-chartjs",
@@ -8051,96 +8034,6 @@
                 }
             ],
             "time": "2025-06-08T13:02:51+00:00"
-        },
-        {
-            "name": "symfony/ux-toolkit",
-            "version": "2.x-dev",
-            "dist": {
-                "type": "path",
-                "url": "../../workspace-os/symfony-ux/src/Toolkit",
-                "reference": "ca814368698a74478af53baf542abc7ae1f22bee"
-            },
-            "require": {
-                "php": ">=8.1",
-                "symfony/console": "^6.4|^7.0",
-                "symfony/filesystem": "^6.4|^7.0",
-                "symfony/framework-bundle": "^6.4|^7.0",
-                "symfony/twig-bundle": "^6.4|^7.0",
-                "symfony/ux-twig-component": "^2.25.1",
-                "symfony/yaml": "^6.4|^7.0",
-                "twig/twig": "^3.0"
-            },
-            "conflict": {
-                "symfony/ux-twig-component": "<2.21"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^9.6.22",
-                "spatie/phpunit-snapshot-assertions": "^4.2.17",
-                "symfony/finder": "6.4|^7.0",
-                "symfony/http-client": "6.4|^7.0",
-                "symfony/phpunit-bridge": "^7.2",
-                "symfony/stopwatch": "^6.4|^7.0",
-                "symfony/ux-icons": "^2.18",
-                "tales-from-a-dev/twig-tailwind-extra": "^0.4.0",
-                "twig/extra-bundle": "^3.19|^4.0",
-                "twig/html-extra": "^3.19",
-                "vincentlanglet/twig-cs-fixer": "^3.5",
-                "zenstruck/console-test": "^1.7"
-            },
-            "bin": [
-                "bin/ux-toolkit-kit-create",
-                "bin/ux-toolkit-kit-debug"
-            ],
-            "type": "symfony-bundle",
-            "extra": {
-                "thanks": {
-                    "name": "symfony/ux",
-                    "url": "https://github.com/symfony/ux"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\UX\\Toolkit\\": "src"
-                },
-                "exclude-from-classmap": []
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Symfony\\UX\\Toolkit\\Tests\\": "tests/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                },
-                {
-                    "name": "Hugo Alliaume",
-                    "email": "hugo@alliau.me"
-                },
-                {
-                    "name": "Jean-François Lépine",
-                    "email": "lepinejeanfrancois@gmail.com"
-                },
-                {
-                    "name": "Simon André",
-                    "email": "smn.andre@gmail.com"
-                }
-            ],
-            "description": "A tool to easily create a design system in your Symfony app with customizable, well-crafted Twig components",
-            "homepage": "https://symfony.com",
-            "keywords": [
-                "components",
-                "symfony-ux",
-                "twig"
-            ],
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
         },
         {
             "name": "symfony/ux-translator",
@@ -11522,7 +11415,6 @@
         "symfony/ux-map": 20,
         "symfony/ux-react": 20,
         "symfony/ux-svelte": 20,
-        "symfony/ux-toolkit": 20,
         "symfony/ux-translator": 20,
         "symfony/ux-turbo": 20,
         "symfony/ux-twig-component": 20
