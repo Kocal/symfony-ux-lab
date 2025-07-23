@@ -112,6 +112,7 @@
     "require-dev": {
         "blackfire/php-sdk": "^2.5",
         "kocal/biome-js-bundle": "^2.0",
+        "kocal/oxlint-bundle": "^1.0",
         "phpunit/phpunit": "^9.5",
         "symfony/browser-kit": "7.1.*",
         "symfony/css-selector": "7.1.*",

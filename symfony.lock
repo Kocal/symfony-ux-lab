@@ -48,6 +48,9 @@
             "biome.json"
         ]
     },
+    "kocal/oxlint-bundle": {
+        "version": "v1.0.0"
+    },
     "phpunit/phpunit": {
         "version": "9.6",
         "recipe": {

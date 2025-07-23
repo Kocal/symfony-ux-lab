@@ -28,3 +28,7 @@ node_modules
 ###> kocal/biome-js-bundle ###
 /bin/biome
 ###< kocal/biome-js-bundle ###
+
+###> kocal/biome-js-bundle ###
+/bin/oxlint
+###< kocal/biome-js-bundle ###
