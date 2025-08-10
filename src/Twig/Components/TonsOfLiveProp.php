@@ -186,4 +186,21 @@ final class TonsOfLiveProp
         $this->dumbDto->intProp += 1;
         $this->dumbDto->arrayProp[] = 'tag' . $this->prop1;
     }
+
+    #[LiveProp(writable: true, url: true)]
+    public int $page = 1;
+
+    #[LiveAction]
+    public function decrementPage(): void
+    {
+        if ($this->page > 1) {
+            $this->page--;
+        }
+    }
+
+    #[LiveAction]
+    public function incrementPage(): void
+    {
+        $this->page++;
+    }
 }
