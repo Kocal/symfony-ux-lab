@@ -123,9 +123,9 @@
         "symfony/web-profiler-bundle": "7.1.*"
     },
     "repositories": {
-        "ux-autocomplete": {
+        "ux-toolkit": {
             "type": "path",
-            "url": "../../workspace-os/symfony-ux/src/Autocomplete",
+            "url": "../../workspace-os/symfony-ux/src/Toolkit",
             "options": {
                 "symlink": true
             }
