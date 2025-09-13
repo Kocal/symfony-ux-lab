@@ -187,7 +187,7 @@ final class TonsOfLiveProp
         $this->dumbDto->arrayProp[] = 'tag' . $this->prop1;
     }
 
-    #[LiveProp(writable: true, url: true)]
+    #[LiveProp(writable: true, url: true, fieldName: 'p')]
     public int $page = 1;
 
     #[LiveAction]

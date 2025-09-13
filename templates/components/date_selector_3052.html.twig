@@ -1,0 +1,17 @@
+<div {{ attributes }}>
+    <div class="btn-group mb-3" role="group" aria-label="Date shortcuts">
+        <button class="btn {{ this.matchesPreset('today') ? 'btn-primary' : 'btn-outline-primary' }} btn-sm"
+            {{ live_action('setRange', { preset: 'today' }) }}>
+            Today
+        </button>
+        <button class="btn {{ this.matchesPreset('this_month') ? 'btn-primary' : 'btn-outline-primary' }} btn-sm"
+            {{ live_action('setRange', { preset: 'this_month' }) }}>
+            This Month
+        </button>
+    </div>
+    <ul>
+        <li>id: {{ id }}</li>
+        <li>start: {{ start }}</li>
+        <li>end: {{ end }}</li>
+    </ul>
+</div>
