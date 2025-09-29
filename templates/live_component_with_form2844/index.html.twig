@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello LiveComponentWithForm2844Controller!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code>/Users/kocal/workspace/sf-ux-lab/src/Controller/LiveComponentWithForm2844Controller.php</code></li>
+        <li>Your template at <code>/Users/kocal/workspace/sf-ux-lab/templates/live_component_with_form2844/index.html.twig</code></li>
+    </ul>
+
+    {{ form(form1) }}
+    {{ form(form2) }}
+
+{#    <twig:LiveComponentWithForm2844 />#}
+</div>
+{% endblock %}
