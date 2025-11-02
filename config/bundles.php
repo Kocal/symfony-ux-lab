@@ -25,5 +25,5 @@ return [
     Kocal\BiomeJsBundle\KocalBiomeJsBundle::class => ['dev' => true],
     Symfony\UX\Autocomplete\AutocompleteBundle::class => ['all' => true],
     Symfony\UX\Toolkit\UXToolkitBundle::class => ['all' => true],
-    Kocal\OxlintBundle\KocalOxlintBundle::class => ['all' => true],
+    Kocal\OxlintBundle\KocalOxlintBundle::class => ['dev' => true],
 ];

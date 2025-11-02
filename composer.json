@@ -109,6 +109,9 @@
         "symfony": {
             "allow-contrib": true,
             "require": "7.2.*"
+        },
+        "symfony/flex": {
+            "synchronize_package_json": true
         }
     },
     "require-dev": {
