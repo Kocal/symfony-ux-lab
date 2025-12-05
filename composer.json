@@ -130,7 +130,7 @@
     "repositories": {
         "ux-toolkit": {
             "type": "path",
-            "url": "../../workspace-os/symfony-ux/src/Toolkit",
+            "url": "../../symfony/ux/src/Toolkit",
             "options": {
                 "symlink": true
             }

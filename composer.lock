@@ -8357,7 +8357,7 @@
             "version": "2.x-dev",
             "dist": {
                 "type": "path",
-                "url": "../../workspace-os/symfony-ux/src/Toolkit",
+                "url": "../../workspace/symfony/ux/src/Toolkit",
                 "reference": "cf7b48a5d530cd31b662681c4403d328608c8888"
             },
             "require": {
