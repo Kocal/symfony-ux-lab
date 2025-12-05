@@ -1,10 +1,6 @@
-import { localeFallbacks } from "@app/translations/configuration";
-import {
-	getLocale,
-	setLocale,
-	setLocaleFallbacks,
-	trans,
-} from "@symfony/ux-translator";
+import { createTranslator } from "@symfony/ux-translator";
+import { messages, localeFallbacks } from "../var/translations/index.js";
+
 /*
  * This file is part of the Symfony UX Translator package.
  *
@@ -14,8 +10,9 @@ import {
  * If you use TypeScript, you can rename this file to "translator.ts" to take advantage of types checking.
  */
 
-setLocaleFallbacks(localeFallbacks);
+export const translator = createTranslator({
+    messages,
+    localeFallbacks,
+})
 
-export { trans };
-
-export * from "@app/translations";
+export const { trans, setLocale } = translator;

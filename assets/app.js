@@ -13,3 +13,7 @@ console.log("This log comes from assets/app.js - welcome to AssetMapper! 🎉");
 
 registerSvelteControllerComponents();
 registerReactControllerComponents();
+
+import { trans } from "./translator.js";
+
+console.log(trans('website.route.article_list.entity.outro'));
