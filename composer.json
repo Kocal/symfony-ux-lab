@@ -67,7 +67,10 @@
             "symfony/flex": true,
             "symfony/runtime": true
         },
-        "sort-packages": true
+        "sort-packages": true,
+        "audit": {
+            "ignore": ["PKSA-365x-2zjk-pt47"]
+        }
     },
     "autoload": {
         "psr-4": {
@@ -126,14 +129,5 @@
         "symfony/phpunit-bridge": "^7.1",
         "symfony/stopwatch": "7.2.*",
         "symfony/web-profiler-bundle": "7.2.*"
-    },
-    "repositories": {
-        "ux-toolkit": {
-            "type": "path",
-            "url": "../../symfony/ux/src/Toolkit",
-            "options": {
-                "symlink": true
-            }
-        }
     }
 }
