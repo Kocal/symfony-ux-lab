@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% for i in 1..1000 %}
+        <twig:ux:icon name="bi:plus" />
+        <twig:ux:icon name="bi:plus" class="p-2" data-foo="bar" />
+        <twig:ux:icon name="mdi:minus" />
+        <twig:ux:icon name="mdi:minus" class="p-2" data-foo="bar" />
+    {% endfor %}
+{% endblock %}
