@@ -39,7 +39,7 @@ return [
         'path' => '@symfony/ux-map/abstract_map_controller.js',
     ],
     '@googlemaps/js-api-loader' => [
-        'version' => '1.16.8',
+        'version' => '2.0.2',
     ],
     '@symfony/ux-google-map' => [
         'path' => '@symfony/ux-google-map/map_controller.js',
