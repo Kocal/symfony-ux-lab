@@ -330,6 +330,9 @@
             "config/routes/ux_autocomplete.yaml"
         ]
     },
+    "symfony/ux-calendar-link": {
+        "version": "3.x-dev"
+    },
     "symfony/ux-chartjs": {
         "version": "2.x-dev"
     },

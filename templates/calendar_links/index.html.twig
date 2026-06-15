@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CalendarLinksController!{% endblock %}
+
+{% block body %}
+    <div>
+
+        <ul>
+            {% for calendar_link in ux_calendar_links(event) %}
+                <li>
+                    <a href="{{ calendar_link.url }}" target="_blank">
+                        {{ calendar_link.label }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+
+    </div>
+{% endblock %}
