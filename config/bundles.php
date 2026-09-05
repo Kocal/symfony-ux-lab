@@ -27,4 +27,5 @@ return [
     Symfony\UX\Toolkit\UXToolkitBundle::class => ['all' => true],
     Kocal\OxlintBundle\KocalOxlintBundle::class => ['dev' => true],
     Symfony\UX\CalendarLink\UXCalendarLinkBundle::class => ['all' => true],
+    Symfony\UX\Image\UXImageBundle::class => ['all' => true],
 ];

@@ -957,7 +957,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         enabled?: bool|Param, // Default: false
  *     },
  *     html?: bool|array{
- *         enabled?: bool|Param, // Default: false
+ *         enabled?: bool|Param, // Default: true
  *     },
  *     markdown?: bool|array{
  *         enabled?: bool|Param, // Default: false
@@ -1481,6 +1481,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     iconify?: bool|array{ // Configuration for the remote icon service.
  *         enabled?: bool|Param, // Default: true
  *         on_demand?: bool|Param, // Whether to download icons "on demand". // Default: true
+ *         auto_lock?: bool|Param, // Persist "on demand" icons to the local icon directory (see "icon_dir"). Recommended in dev only. Requires "on_demand" to be enabled. // Default: false
  *         endpoint?: scalar|Param|null, // The endpoint for the Iconify icons API. // Default: "https://api.iconify.design"
  *     },
  *     ignore_not_found?: bool|Param, // Ignore error when an icon is not found. Set to 'true' to fail silently. // Default: false
@@ -1539,6 +1540,10 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  * @psalm-type KocalOxlintConfig = array{
  *     binary_version?: scalar|Param|null, // Oxlint binary version to download.
  * }
+ * @psalm-type UxImageConfig = array{
+ *     provider?: scalar|Param|null, // Default: null
+ *     formats?: list<scalar|Param|null>,
+ * }
  * @psalm-type ConfigType = array{
  *     imports?: ImportsConfig,
  *     parameters?: ParametersConfig,
@@ -1560,6 +1565,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     svelte?: SvelteConfig,
  *     react?: ReactConfig,
  *     mercure?: MercureConfig,
+ *     ux_image?: UxImageConfig,
  *     "when@dev"?: array{
  *         imports?: ImportsConfig,
  *         parameters?: ParametersConfig,
@@ -1586,6 +1592,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         mercure?: MercureConfig,
  *         kocal_biome_js?: KocalBiomeJsConfig,
  *         kocal_oxlint?: KocalOxlintConfig,
+ *         ux_image?: UxImageConfig,
  *     },
  *     "when@prod"?: array{
  *         imports?: ImportsConfig,
@@ -1608,6 +1615,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         svelte?: SvelteConfig,
  *         react?: ReactConfig,
  *         mercure?: MercureConfig,
+ *         ux_image?: UxImageConfig,
  *     },
  *     "when@test"?: array{
  *         imports?: ImportsConfig,
@@ -1631,6 +1639,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         svelte?: SvelteConfig,
  *         react?: ReactConfig,
  *         mercure?: MercureConfig,
+ *         ux_image?: UxImageConfig,
  *     },
  *     ...<string, ExtensionType|array{ // extra keys must follow the when@%env% pattern or match an extension alias
  *         imports?: ImportsConfig,

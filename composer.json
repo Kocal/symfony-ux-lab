@@ -47,6 +47,7 @@
         "symfony/ux-chartjs": "3.x-dev",
         "symfony/ux-google-map": "3.x-dev",
         "symfony/ux-icons": "3.x-dev",
+        "symfony/ux-image": "3.x-dev",
         "symfony/ux-leaflet-map": "3.x-dev",
         "symfony/ux-live-component": "3.x-dev",
         "symfony/ux-map": "3.x-dev",
@@ -59,8 +60,9 @@
         "symfony/validator": "8.0.*",
         "symfony/web-link": "8.0.*",
         "symfony/yaml": "8.0.*",
-        "twig/extra-bundle": "^3.24",
-        "twig/twig": "^3.24"
+        "twig/extra-bundle": "3.x-dev",
+        "twig/html-extra": "3.x-dev",
+        "twig/twig": "3.x-dev"
     },
     "config": {
         "allow-plugins": {
@@ -131,12 +133,18 @@
         "symfony/stopwatch": "8.0.*",
         "symfony/web-profiler-bundle": "8.0.*"
     },
-    "repositories": [{
-        "name": "ux-calendar-link",
-        "type": "path",
-        "url": "../../symfony/ux/src/CalendarLink",
-        "options": {
-            "symlink": true
+    "repositories": [
+        {"name": "ux-image", "type": "path", "url": "../../symfony/ux/src/Image", "options": {"symlink": true}},
+        {"name": "ux-cloudflare-image", "type": "path", "url": "../../symfony/ux/src/Image/src/Bridge/Cloudflare", "options": {"symlink": true}},
+        {"name": "ux-glide-image", "type": "path", "url": "../../symfony/ux/src/Image/src/Bridge/Glide", "options": {"symlink": true}},
+        {"name": "ux-keycdn-image", "type": "path", "url": "../../symfony/ux/src/Image/src/Bridge/KeyCdn", "options": {"symlink": true}},
+        {
+            "name": "ux-calendar-link",
+            "type": "path",
+            "url": "../../symfony/ux/src/CalendarLink",
+            "options": {
+                "symlink": true
+            }
         }
-    }]
+    ]
 }

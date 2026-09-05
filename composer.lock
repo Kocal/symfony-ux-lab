@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aea89689c7ba89c209b6340732f4ad37",
+    "content-hash": "8772230bef55a774e6ee710bebc36173",
     "packages": [
         {
             "name": "carbonphp/carbon-doctrine-types",
@@ -7588,10 +7588,11 @@
             "dist": {
                 "type": "path",
                 "url": "../../symfony/ux/src/CalendarLink",
-                "reference": "0eb0a3e661098c595996c8f44389be50e5e1aa66"
+                "reference": "a8d70bfbc7a74929a80294eb8c0c0d5cf79101b7"
             },
             "require": {
                 "php": ">=8.4",
+                "symfony/clock": "^7.4|^8.0",
                 "symfony/framework-bundle": "^7.4|^8.0",
                 "symfony/twig-bundle": "^7.4|^8.0",
                 "symfony/uid": "^7.4|^8.0"
@@ -7626,6 +7627,10 @@
                 {
                     "name": "Imad ZAIRIG",
                     "email": "imadzairig@gmail.com"
+                },
+                {
+                    "name": "Hugo Alliaume",
+                    "email": "hugo@alliau.me"
                 },
                 {
                     "name": "Symfony Community",
@@ -7898,6 +7903,71 @@
                 }
             ],
             "time": "2026-04-21T11:43:29+00:00"
+        },
+        {
+            "name": "symfony/ux-image",
+            "version": "3.x-dev",
+            "dist": {
+                "type": "path",
+                "url": "../../symfony/ux/src/Image",
+                "reference": "255b5273598987f09000974b1dbcf570237fe748"
+            },
+            "require": {
+                "php": ">=8.4",
+                "symfony/config": "^7.4|^8.0",
+                "symfony/dependency-injection": "^7.4|^8.0",
+                "symfony/http-kernel": "^7.4|^8.0",
+                "symfony/twig-bundle": "^7.4|^8.0",
+                "symfony/ux-twig-component": "^3.5",
+                "twig/html-extra": "^3.29"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^12.0",
+                "symfony/framework-bundle": "^7.4|^8.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "thanks": {
+                    "name": "symfony/ux",
+                    "url": "https://github.com/symfony/ux"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\UX\\Image\\": "src/"
+                },
+                "exclude-from-classmap": []
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Symfony\\UX\\Image\\Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hugo Alliaume",
+                    "email": "hugo@alliau.me"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Responsive images for Symfony, delivered through URL-based image providers",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "cdn",
+                "image",
+                "responsive",
+                "symfony-ux"
+            ],
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
         },
         {
             "name": "symfony/ux-leaflet-map",
@@ -9134,16 +9204,16 @@
         },
         {
             "name": "twig/extra-bundle",
-            "version": "v3.24.0",
+            "version": "3.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/twig-extra-bundle.git",
-                "reference": "6a621fcb1f28aa9ea7b34a99047ae0cdf5b834c9"
+                "reference": "d8ee10385ef3958f0036e5f3692da476741b339a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/twig-extra-bundle/zipball/6a621fcb1f28aa9ea7b34a99047ae0cdf5b834c9",
-                "reference": "6a621fcb1f28aa9ea7b34a99047ae0cdf5b834c9",
+                "url": "https://api.github.com/repos/twigphp/twig-extra-bundle/zipball/d8ee10385ef3958f0036e5f3692da476741b339a",
+                "reference": "d8ee10385ef3958f0036e5f3692da476741b339a",
                 "shasum": ""
             },
             "require": {
@@ -9163,6 +9233,7 @@
                 "twig/markdown-extra": "^3.0",
                 "twig/string-extra": "^3.0"
             },
+            "default-branch": true,
             "type": "symfony-bundle",
             "autoload": {
                 "psr-4": {
@@ -9192,7 +9263,7 @@
                 "twig"
             ],
             "support": {
-                "source": "https://github.com/twigphp/twig-extra-bundle/tree/v3.24.0"
+                "source": "https://github.com/twigphp/twig-extra-bundle/tree/3.x"
             },
             "funding": [
                 {
@@ -9204,20 +9275,89 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-02-07T08:07:38+00:00"
+            "time": "2026-08-27T05:27:31+00:00"
         },
         {
-            "name": "twig/twig",
-            "version": "v3.24.0",
+            "name": "twig/html-extra",
+            "version": "3.x-dev",
             "source": {
                 "type": "git",
-                "url": "https://github.com/twigphp/Twig.git",
-                "reference": "a6769aefb305efef849dc25c9fd1653358c148f0"
+                "url": "https://github.com/twigphp/html-extra.git",
+                "reference": "344b572d18dc884170566e517530aeac245c4479"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/a6769aefb305efef849dc25c9fd1653358c148f0",
-                "reference": "a6769aefb305efef849dc25c9fd1653358c148f0",
+                "url": "https://api.github.com/repos/twigphp/html-extra/zipball/344b572d18dc884170566e517530aeac245c4479",
+                "reference": "344b572d18dc884170566e517530aeac245c4479",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1.0",
+                "symfony/deprecation-contracts": "^2.5|^3",
+                "symfony/mime": "^5.4|^6.4|^7.0|^8.0",
+                "twig/twig": "^3.13|^4.0"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "^6.4|^7.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "Resources/functions.php"
+                ],
+                "psr-4": {
+                    "Twig\\Extra\\Html\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
+                }
+            ],
+            "description": "A Twig extension for HTML",
+            "homepage": "https://twig.symfony.com",
+            "keywords": [
+                "html",
+                "twig"
+            ],
+            "support": {
+                "source": "https://github.com/twigphp/html-extra/tree/3.x"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/twig/twig",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2026-09-03T17:24:11+00:00"
+        },
+        {
+            "name": "twig/twig",
+            "version": "3.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twigphp/Twig.git",
+                "reference": "a3209275354d46556e47b3efc2e15612020dfb92"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/a3209275354d46556e47b3efc2e15612020dfb92",
+                "reference": "a3209275354d46556e47b3efc2e15612020dfb92",
                 "shasum": ""
             },
             "require": {
@@ -9232,6 +9372,7 @@
                 "psr/container": "^1.0|^2.0",
                 "symfony/phpunit-bridge": "^5.4.9|^6.4|^7.0"
             },
+            "default-branch": true,
             "type": "library",
             "autoload": {
                 "files": [
@@ -9272,7 +9413,7 @@
             ],
             "support": {
                 "issues": "https://github.com/twigphp/Twig/issues",
-                "source": "https://github.com/twigphp/Twig/tree/v3.24.0"
+                "source": "https://github.com/twigphp/Twig/tree/3.x"
             },
             "funding": [
                 {
@@ -9284,7 +9425,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-03-17T21:31:11+00:00"
+            "time": "2026-09-05T09:35:27+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -11901,6 +12042,7 @@
         "symfony/ux-chartjs": 20,
         "symfony/ux-google-map": 20,
         "symfony/ux-icons": 20,
+        "symfony/ux-image": 20,
         "symfony/ux-leaflet-map": 20,
         "symfony/ux-live-component": 20,
         "symfony/ux-map": 20,
@@ -11909,7 +12051,10 @@
         "symfony/ux-toolkit": 20,
         "symfony/ux-translator": 20,
         "symfony/ux-turbo": 20,
-        "symfony/ux-twig-component": 20
+        "symfony/ux-twig-component": 20,
+        "twig/extra-bundle": 20,
+        "twig/html-extra": 20,
+        "twig/twig": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
