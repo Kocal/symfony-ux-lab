@@ -1537,12 +1537,20 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  * @psalm-type KocalBiomeJsConfig = array{
  *     binary_version?: scalar|Param|null, // Biome.js CLI version to download.
  * }
+ * @psalm-type UxToolkitConfig = array{
+ *     preview?: bool|array{ // Wires the preview assets of kits into AssetMapper, Tailwind and the importmap.
+ *         enabled?: bool|Param, // Default: false
+ *         kits?: list<scalar|Param|null>,
+ *     },
+ * }
  * @psalm-type KocalOxlintConfig = array{
  *     binary_version?: scalar|Param|null, // Oxlint binary version to download.
  * }
  * @psalm-type UxImageConfig = array{
  *     provider?: scalar|Param|null, // Default: null
  *     formats?: list<scalar|Param|null>,
+ *     resolutions?: list<int|Param>,
+ *     quality?: int|Param, // The quality of every generated image that sets none itself; null leaves it to the provider. // Default: null
  * }
  * @psalm-type ConfigType = array{
  *     imports?: ImportsConfig,
@@ -1565,6 +1573,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     svelte?: SvelteConfig,
  *     react?: ReactConfig,
  *     mercure?: MercureConfig,
+ *     ux_toolkit?: UxToolkitConfig,
  *     ux_image?: UxImageConfig,
  *     "when@dev"?: array{
  *         imports?: ImportsConfig,
@@ -1591,6 +1600,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         react?: ReactConfig,
  *         mercure?: MercureConfig,
  *         kocal_biome_js?: KocalBiomeJsConfig,
+ *         ux_toolkit?: UxToolkitConfig,
  *         kocal_oxlint?: KocalOxlintConfig,
  *         ux_image?: UxImageConfig,
  *     },
@@ -1615,6 +1625,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         svelte?: SvelteConfig,
  *         react?: ReactConfig,
  *         mercure?: MercureConfig,
+ *         ux_toolkit?: UxToolkitConfig,
  *         ux_image?: UxImageConfig,
  *     },
  *     "when@test"?: array{
@@ -1639,6 +1650,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         svelte?: SvelteConfig,
  *         react?: ReactConfig,
  *         mercure?: MercureConfig,
+ *         ux_toolkit?: UxToolkitConfig,
  *         ux_image?: UxImageConfig,
  *     },
  *     ...<string, ExtensionType|array{ // extra keys must follow the when@%env% pattern or match an extension alias
