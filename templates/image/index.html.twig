@@ -54,7 +54,7 @@
 {% endblock %}
 
 {% block body %}
-    {% set auto_type = provider in ['cloudflare', 'cloudinary'] ? 'image/avif' : 'image/jpeg' %}
+    {% set auto_type = provider in ['cloudflare', 'cloudinary', 'imgix'] ? 'image/avif' : 'image/jpeg' %}
 
     <header class="wrap">
         <h1>UX Image</h1>
@@ -65,7 +65,7 @@
                 <li><code>cloudflared tunnel run sf-ux-lab</code></li>
                 <li>Ouvre <a href="https://sf-ux-lab.kocal.fr/image">https://sf-ux-lab.kocal.fr/image</a></li>
             </ol>
-            <p>Sans le tunnel, Cloudflare, Cloudinary (mode fetch) et KeyCDN ne peuvent pas récupérer les originaux sur <code>https://sf-ux-lab.kocal.fr/uploads/</code>.</p>
+            <p>Sans le tunnel, Cloudflare, Cloudinary (mode fetch), imgix (source Web Folder) et KeyCDN ne peuvent pas récupérer les originaux sur <code>https://sf-ux-lab.kocal.fr/uploads/</code>.</p>
         </section>
         <ul class="pills">
             <li>provider : <strong>{{ provider }}</strong></li>
@@ -212,7 +212,7 @@
                 <ul>
                     <li><code>quality="10"</code> : détails bavés, aplats dans le ciel et la végétation. Environ 25 fois plus léger : 6 Ko contre 152 Ko en 1000 × 750 sur Cloudflare.</li>
                     <li><code>quality="90"</code> : net.</li>
-                    <li>URL : <code>quality=10</code> et <code>quality=90</code> (Cloudflare, KeyCDN), <code>q_10</code> et <code>q_90</code> (Cloudinary).</li>
+                    <li>URL : <code>quality=10</code> et <code>quality=90</code> (Cloudflare, KeyCDN), <code>q_10</code> et <code>q_90</code> (Cloudinary), <code>q=10</code> et <code>q=90</code> (imgix).</li>
                 </ul>
             </div>
         </section>
@@ -246,21 +246,21 @@
 
         <section class="case">
             <h3>8. <code>operations</code> par provider</h3>
-            <span class="props">width="300" height="300" :operations="{cloudflare: {…}, cloudinary: {…}, keycdn: {…}}"</span>
+            <span class="props">width="300" height="300" :operations="{cloudflare: {…}, cloudinary: {…}, imgix: {…}, keycdn: {…}}"</span>
             <div class="row">
                 <figure class="shot">
                     <twig:ux:image src="/uploads/Gros-Caillou.jpeg" alt="Gros Caillou" width="300" height="300"
-                        :operations="{cloudflare: {saturation: 0}, cloudinary: {e: 'grayscale'}, keycdn: {grayscale: 1}}" />
+                        :operations="{cloudflare: {saturation: 0}, cloudinary: {e: 'grayscale'}, imgix: {sat: -100}, keycdn: {grayscale: 1}}" />
                     <figcaption><strong>niveaux de gris</strong></figcaption>
                 </figure>
                 <figure class="shot">
                     <twig:ux:image src="/uploads/Gros-Caillou.jpeg" alt="Gros Caillou" width="300" height="300"
-                        :operations="{cloudflare: {blur: 20}, cloudinary: {e: 'blur:400'}, keycdn: {blur: 5}}" />
+                        :operations="{cloudflare: {blur: 20}, cloudinary: {e: 'blur:400'}, imgix: {blur: 200}, keycdn: {blur: 5}}" />
                     <figcaption><strong>flou</strong></figcaption>
                 </figure>
                 <figure class="shot">
                     <twig:ux:image src="/uploads/Gros-Caillou.jpeg" alt="Gros Caillou" width="300" height="300"
-                        :operations="{cloudflare: {rotate: 90}, cloudinary: {a: 90}, keycdn: {rotate: 90}}" />
+                        :operations="{cloudflare: {rotate: 90}, cloudinary: {a: 90}, imgix: {orient: 90}, keycdn: {rotate: 90}}" />
                     <figcaption><strong>rotation 90°</strong></figcaption>
                 </figure>
             </div>

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "95cabb573cd3ed74fa57d247be4c8b5c",
+    "content-hash": "3bfa1902305bdcf0505a8771f07725b4",
     "packages": [
         {
             "name": "carbonphp/carbon-doctrine-types",
@@ -8083,6 +8083,61 @@
             }
         },
         {
+            "name": "symfony/ux-imgix-image",
+            "version": "3.x-dev",
+            "dist": {
+                "type": "path",
+                "url": "../../symfony/ux/src/Image/src/Bridge/Imgix",
+                "reference": "2264ffaa06a2eb8a4812cc335773bf9eb32d0f6b"
+            },
+            "require": {
+                "php": ">=8.4",
+                "symfony/ux-image": "^3.6"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^12.0",
+                "spatie/phpunit-snapshot-assertions": "^5.2.3"
+            },
+            "type": "symfony-ux-image-bridge",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\UX\\Image\\Bridge\\Imgix\\": "src/"
+                },
+                "exclude-from-classmap": []
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Symfony\\UX\\Image\\Bridge\\Imgix\\Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kevin Bond",
+                    "email": "kevinbond@gmail.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony UX Image imgix Bridge",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "cdn",
+                "image",
+                "imgix",
+                "responsive",
+                "symfony-ux"
+            ],
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
             "name": "symfony/ux-keycdn-image",
             "version": "3.x-dev",
             "dist": {
@@ -12213,6 +12268,7 @@
         "symfony/ux-google-map": 20,
         "symfony/ux-icons": 20,
         "symfony/ux-image": 20,
+        "symfony/ux-imgix-image": 20,
         "symfony/ux-keycdn-image": 20,
         "symfony/ux-leaflet-map": 20,
         "symfony/ux-live-component": 20,
