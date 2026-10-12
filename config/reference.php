@@ -1551,6 +1551,14 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     formats?: list<scalar|Param|null>,
  *     resolutions?: list<int|Param>,
  *     quality?: int|Param, // The quality of every generated image that sets none itself; null leaves it to the provider. // Default: null
+ *     presets?: array<string, array{ // Default: []
+ *         width?: int|Param,
+ *         height?: int|Param,
+ *         fit?: scalar|Param|null,
+ *         format?: string|Param,
+ *         quality?: int|Param,
+ *         operations?: array<string, array<string, scalar|Param|null>>,
+ *     }>,
  * }
  * @psalm-type ConfigType = array{
  *     imports?: ImportsConfig,

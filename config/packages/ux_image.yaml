@@ -1,0 +1,10 @@
+parameters:
+    env(UX_IMAGE_DSN): 'null://null'
+
+ux_image:
+    provider: '%env(resolve:UX_IMAGE_DSN)%'
+    presets:
+        thumbnail:
+            width: 300
+            height: 300
+            quality: 50

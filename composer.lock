@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8772230bef55a774e6ee710bebc36173",
+    "content-hash": "95cabb573cd3ed74fa57d247be4c8b5c",
     "packages": [
         {
             "name": "carbonphp/carbon-doctrine-types",
@@ -7735,6 +7735,116 @@
             "time": "2026-05-06T04:34:57+00:00"
         },
         {
+            "name": "symfony/ux-cloudflare-image",
+            "version": "3.x-dev",
+            "dist": {
+                "type": "path",
+                "url": "../../symfony/ux/src/Image/src/Bridge/Cloudflare",
+                "reference": "db161ac2ad95dcb2c50a82c8a9ae2821a1621289"
+            },
+            "require": {
+                "php": ">=8.4",
+                "symfony/ux-image": "^3.6"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^12.0",
+                "spatie/phpunit-snapshot-assertions": "^5.2.3"
+            },
+            "type": "symfony-ux-image-bridge",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\UX\\Image\\Bridge\\Cloudflare\\": "src/"
+                },
+                "exclude-from-classmap": []
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Symfony\\UX\\Image\\Bridge\\Cloudflare\\Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hugo Alliaume",
+                    "email": "hugo@alliau.me"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony UX Image Cloudflare Bridge",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "cdn",
+                "cloudflare",
+                "image",
+                "responsive",
+                "symfony-ux"
+            ],
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "symfony/ux-cloudinary-image",
+            "version": "3.x-dev",
+            "dist": {
+                "type": "path",
+                "url": "../../symfony/ux/src/Image/src/Bridge/cloudinary",
+                "reference": "0f8c0c39b322060812da04c46e6633734cb56d57"
+            },
+            "require": {
+                "php": ">=8.4",
+                "symfony/ux-image": "^3.6"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^12.0",
+                "spatie/phpunit-snapshot-assertions": "^5.2.3"
+            },
+            "type": "symfony-ux-image-bridge",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\UX\\Image\\Bridge\\Cloudinary\\": "src/"
+                },
+                "exclude-from-classmap": []
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Symfony\\UX\\Image\\Bridge\\Cloudinary\\Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kevin Bond",
+                    "email": "kevinbond@gmail.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony UX Image Cloudinary Bridge",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "cdn",
+                "cloudinary",
+                "image",
+                "responsive",
+                "symfony-ux"
+            ],
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
             "name": "symfony/ux-google-map",
             "version": "3.x-dev",
             "source": {
@@ -7910,20 +8020,23 @@
             "dist": {
                 "type": "path",
                 "url": "../../symfony/ux/src/Image",
-                "reference": "255b5273598987f09000974b1dbcf570237fe748"
+                "reference": "f0d03bfb790ccc8000a85061a3396c5e938bf261"
             },
             "require": {
                 "php": ">=8.4",
                 "symfony/config": "^7.4|^8.0",
                 "symfony/dependency-injection": "^7.4|^8.0",
                 "symfony/http-kernel": "^7.4|^8.0",
-                "symfony/twig-bundle": "^7.4|^8.0",
-                "symfony/ux-twig-component": "^3.5",
-                "twig/html-extra": "^3.29"
+                "symfony/options-resolver": "^7.4|^8.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "^12.0",
-                "symfony/framework-bundle": "^7.4|^8.0"
+                "spatie/phpunit-snapshot-assertions": "^5.2.3",
+                "symfony/error-handler": "^7.4.17|^8.1.5",
+                "symfony/framework-bundle": "^7.4|^8.0",
+                "symfony/twig-bundle": "^7.4|^8.0",
+                "symfony/ux-twig-component": "^3.5",
+                "twig/html-extra": "^3.29"
             },
             "type": "symfony-bundle",
             "extra": {
@@ -7961,6 +8074,61 @@
             "keywords": [
                 "cdn",
                 "image",
+                "responsive",
+                "symfony-ux"
+            ],
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "symfony/ux-keycdn-image",
+            "version": "3.x-dev",
+            "dist": {
+                "type": "path",
+                "url": "../../symfony/ux/src/Image/src/Bridge/KeyCdn",
+                "reference": "b0697805e3770388b0a010247e7f48e1a9775e15"
+            },
+            "require": {
+                "php": ">=8.4",
+                "symfony/ux-image": "^3.6"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^12.0",
+                "spatie/phpunit-snapshot-assertions": "^5.2.3"
+            },
+            "type": "symfony-ux-image-bridge",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\UX\\Image\\Bridge\\KeyCdn\\": "src/"
+                },
+                "exclude-from-classmap": []
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Symfony\\UX\\Image\\Bridge\\KeyCdn\\Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hugo Alliaume",
+                    "email": "hugo@alliau.me"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony UX Image KeyCDN Bridge",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "cdn",
+                "image",
+                "keycdn",
                 "responsive",
                 "symfony-ux"
             ],
@@ -12040,9 +12208,12 @@
         "symfony/ux-autocomplete": 20,
         "symfony/ux-calendar-link": 20,
         "symfony/ux-chartjs": 20,
+        "symfony/ux-cloudflare-image": 20,
+        "symfony/ux-cloudinary-image": 20,
         "symfony/ux-google-map": 20,
         "symfony/ux-icons": 20,
         "symfony/ux-image": 20,
+        "symfony/ux-keycdn-image": 20,
         "symfony/ux-leaflet-map": 20,
         "symfony/ux-live-component": 20,
         "symfony/ux-map": 20,

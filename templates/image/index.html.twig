@@ -1,0 +1,425 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}UX Image{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        :root {
+            --card: light-dark(#fff, #262626);
+            --line: light-dark(#e4e4e7, #3f3f46);
+            --muted: light-dark(#52525b, #a1a1aa);
+            --check-a: light-dark(#f4f4f5, #303030);
+            --check-b: light-dark(#e4e4e7, #404040);
+            --ok: light-dark(#15803d, #4ade80);
+            --warn: light-dark(#b45309, #fbbf24);
+            --expect-bg: light-dark(#f0fdf4, #14271b);
+            --alert-bg: light-dark(#fff7ed, #3a2614);
+            --alert-line: light-dark(#fdba74, #9a5b1f);
+        }
+        body { margin: 0; font: 15px/1.55 system-ui, -apple-system, sans-serif; }
+        .wrap { max-width: 1100px; margin: 0 auto; padding: 0 16px; box-sizing: border-box; }
+        header.wrap { padding-top: 32px; }
+        h1 { margin: 0 0 8px; }
+        .pills { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; padding: 0; list-style: none; }
+        .pills li { background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 2px 12px; font-size: 13px; }
+        .alert { background: var(--alert-bg); border: 1px solid var(--alert-line); border-radius: 8px; padding: 8px 12px; }
+        .tunnel { background: var(--alert-bg); border: 2px solid var(--alert-line); border-radius: 12px; padding: 16px 20px; margin: 0 0 16px; }
+        .tunnel h2 { margin: 0 0 8px; color: inherit; font-size: 20px; letter-spacing: 0; text-transform: none; }
+        .tunnel ol { margin: 0; padding-left: 22px; }
+        .tunnel li { margin: 6px 0; }
+        .tunnel li code { font-size: 17px; font-weight: 600; }
+        .legend { color: var(--muted); font-size: 14px; }
+        h2 { margin: 40px 0 12px; color: var(--muted); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+        .case { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px; margin-bottom: 20px; }
+        .case h3 { margin: 0 0 4px; font-size: 18px; }
+        .props { color: var(--muted); font: 13px ui-monospace, monospace; overflow-wrap: anywhere; }
+        .row { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; align-items: start; margin: 16px 0; }
+        .row-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .shot { margin: 16px 0; }
+        .row .shot { margin: 0; }
+        .shot img, .banner { display: block; background: repeating-conic-gradient(var(--check-a) 0 25%, var(--check-b) 0 50%) 0 0 / 16px 16px; }
+        .shot figcaption { margin-top: 8px; font-size: 13px; }
+        .shot figcaption strong { display: block; font-size: 14px; }
+        .measure { margin-top: 4px; }
+        .measure .ok { color: var(--ok); font-weight: 600; }
+        .measure .warn { color: var(--warn); font-weight: 600; }
+        .measure .url { color: var(--muted); font: 12px ui-monospace, monospace; overflow-wrap: anywhere; }
+        .measure pre { background: #18181b; color: #e4e4e7; border-radius: 8px; padding: 12px; font-size: 12px; overflow-x: auto; }
+        .expect { background: var(--expect-bg); border-left: 3px solid #22c55e; border-radius: 0 8px 8px 0; padding: 10px 14px; }
+        .expect h4 { margin: 0 0 4px; color: var(--ok); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+        .expect ul { margin: 0; padding-left: 18px; }
+        .banner { width: 100%; aspect-ratio: 2200 / 600; background-size: cover; background-position: center; border-radius: 8px; }
+        code { font: 13px ui-monospace, monospace; }
+    </style>
+{% endblock %}
+
+{% block body %}
+    {% set auto_type = provider in ['cloudflare', 'cloudinary'] ? 'image/avif' : 'image/jpeg' %}
+
+    <header class="wrap">
+        <h1>UX Image</h1>
+        <section class="tunnel">
+            <h2>⚠ Lance le tunnel Cloudflare avant de tester</h2>
+            <ol>
+                <li><code>symfony serve</code> (port 9999, fixé par <code>.symfony.local.yaml</code>)</li>
+                <li><code>cloudflared tunnel run sf-ux-lab</code></li>
+                <li>Ouvre <a href="https://sf-ux-lab.kocal.fr/image">https://sf-ux-lab.kocal.fr/image</a></li>
+            </ol>
+            <p>Sans le tunnel, Cloudflare, Cloudinary (mode fetch) et KeyCDN ne peuvent pas récupérer les originaux sur <code>https://sf-ux-lab.kocal.fr/uploads/</code>.</p>
+        </section>
+        <ul class="pills">
+            <li>provider : <strong>{{ provider }}</strong></li>
+            <li>DPR : <strong data-dpr>?</strong></li>
+            <li>fenêtre : <strong data-viewport>?</strong> px</li>
+        </ul>
+        {% if provider == 'null' %}
+            <p class="alert">Aucune transformation : définis <code>UX_IMAGE_DSN</code> dans <code>.env.local</code>, sinon toutes les images sont les originaux de 5 à 8 Mo.</p>
+        {% endif %}
+        <p class="legend">Sous chaque image : la taille réelle du fichier reçu, son format, son poids, et <strong>✓ net</strong> quand le fichier a au moins autant de pixels que l'écran en affiche (taille affichée × DPR). Les mesures se mettent à jour quand tu redimensionnes la fenêtre.</p>
+    </header>
+
+    <div class="wrap"><h2>Layouts</h2></div>
+
+    <figure class="shot">
+        <twig:ux:image
+            src="/uploads/Col-de-Saint-Bonnet.jpeg"
+            alt="Col de Saint-Bonnet"
+            layout="full-width"
+            width="1600"
+            height="600"
+            priority
+        />
+        <figcaption class="wrap">
+            <strong>1. <code>full-width</code> + <code>priority</code></strong>
+            <span class="props">layout="full-width" width="1600" height="600" priority</span>
+        </figcaption>
+    </figure>
+    <div class="wrap">
+        <div class="expect">
+            <h4>Ce que tu dois voir</h4>
+            <ul>
+                <li>Toute la largeur de la fenêtre, ratio 8:3 : le haut et le bas de la photo 4:3 sont coupés.</li>
+                <li>HTML : <code>loading="eager" fetchpriority="high"</code>, <code>sizes="100vw"</code>, 15 candidats de 640w à 6016w.</li>
+                <li>Fichier ≈ largeur de la fenêtre × DPR, arrondi au candidat supérieur (1800 px × 2 -> 3840 px).</li>
+                <li>Cloudflare a servi du <code>image/webp</code> à 3840 px au lieu de l'avif servi pour les autres images : à vérifier dans la mesure.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="wrap">
+        <section class="case">
+            <h3>2. <code>constrained</code> (layout par défaut)</h3>
+            <span class="props">width="800" height="450"</span>
+            <figure class="shot">
+                <twig:ux:image src="/uploads/Gros-Caillou.jpeg" alt="Gros Caillou" width="800" height="450" />
+                <figcaption><strong>Gros-Caillou (photo portrait 3:4)</strong></figcaption>
+            </figure>
+            <div class="expect">
+                <h4>Ce que tu dois voir</h4>
+                <ul>
+                    <li>800 px de large au maximum, l'image rétrécit avec la fenêtre.</li>
+                    <li>Ratio 16:9 sur une photo portrait : seule la bande centrale reste.</li>
+                    <li><code>srcset</code> de 640w à 1600w, <code>sizes="(min-width: 800px) 800px, 100vw"</code>. Sur Retina : fichier 1600 × 900.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="case">
+            <h3>3. <code>fixed</code></h3>
+            <span class="props">layout="fixed" width="300" height="300"</span>
+            <figure class="shot">
+                <twig:ux:image src="/uploads/Col-de-Saint-Bonnet.jpeg" alt="Col de Saint-Bonnet" layout="fixed" width="300" height="300" />
+                <figcaption><strong>Col de Saint-Bonnet (photo paysage 4:3)</strong></figcaption>
+            </figure>
+            <div class="expect">
+                <h4>Ce que tu dois voir</h4>
+                <ul>
+                    <li>Toujours 300 × 300 px, même dans une fenêtre étroite.</li>
+                    <li>Carré centré : les côtés de la photo sont coupés.</li>
+                    <li>Seulement 2 candidats, <code>300w</code> et <code>600w</code>, avec <code>sizes="300px"</code>. Sur Retina : fichier 600 × 600.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="case">
+            <h3>4. <code>sizes</code> personnalisé dans une grille</h3>
+            <span class="props">width="800" height="600" sizes="(min-width: 1100px) 330px, calc((100vw - 120px) / 3)"</span>
+            <div class="row row-3">
+                <figure class="shot">
+                    <twig:ux:image src="/uploads/Col-de-Saint-Bonnet.jpeg" alt="Col de Saint-Bonnet" width="800" height="600" />
+                    <figcaption><strong>sizes généré</strong></figcaption>
+                </figure>
+                <figure class="shot">
+                    <twig:ux:image src="/uploads/Col-de-Saint-Bonnet.jpeg" alt="Col de Saint-Bonnet" width="800" height="600" sizes="(min-width: 1100px) 330px, calc((100vw - 120px) / 3)" />
+                    <figcaption><strong>sizes personnalisé</strong></figcaption>
+                </figure>
+                <figure class="shot">
+                    <twig:ux:image src="/uploads/Gros-Caillou.jpeg" alt="Gros Caillou" width="800" height="600" sizes="(min-width: 1100px) 330px, calc((100vw - 120px) / 3)" />
+                    <figcaption><strong>sizes personnalisé</strong></figcaption>
+                </figure>
+            </div>
+            <div class="expect">
+                <h4>Ce que tu dois voir</h4>
+                <ul>
+                    <li>Les 3 images s'affichent à la même taille, environ 330 px de large.</li>
+                    <li>La 1re télécharge quand même un fichier de 1600 px de large : son <code>sizes</code> généré annonce 800 px.</li>
+                    <li>Les 2 autres prennent environ 750 px sur Retina, donc un poids 3 à 4 fois plus faible.</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <div class="wrap">
+        <h2>Transformations</h2>
+
+        <section class="case">
+            <h3>5. <code>fit</code> : <code>cover</code> ou <code>contain</code></h3>
+            <span class="props">width="400" height="400" fit="…"</span>
+            <div class="row">
+                <figure class="shot">
+                    <twig:ux:image src="/uploads/Gros-Caillou.jpeg" alt="Gros Caillou" width="400" height="400" fit="cover" />
+                    <figcaption><strong>fit="cover"</strong></figcaption>
+                </figure>
+                <figure class="shot">
+                    <twig:ux:image src="/uploads/Gros-Caillou.jpeg" alt="Gros Caillou" width="400" height="400" fit="contain" />
+                    <figcaption><strong>fit="contain"</strong></figcaption>
+                </figure>
+            </div>
+            <div class="expect">
+                <h4>Ce que tu dois voir</h4>
+                <ul>
+                    <li><code>cover</code> : carré plein, le haut et le bas de la photo portrait sont coupés. Sur Retina : fichier 800 × 800.</li>
+                    <li><code>contain</code> : photo entière, damier visible à gauche et à droite. Le fichier garde le ratio 3:4 : 600 × 800 sur Retina.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="case">
+            <h3>6. <code>quality</code></h3>
+            <span class="props">width="500" height="375" quality="…"</span>
+            <div class="row">
+                <figure class="shot">
+                    <twig:ux:image src="/uploads/Col-de-Saint-Bonnet.jpeg" alt="Col de Saint-Bonnet" width="500" height="375" quality="10" />
+                    <figcaption><strong>quality="10"</strong></figcaption>
+                </figure>
+                <figure class="shot">
+                    <twig:ux:image src="/uploads/Col-de-Saint-Bonnet.jpeg" alt="Col de Saint-Bonnet" width="500" height="375" quality="90" />
+                    <figcaption><strong>quality="90"</strong></figcaption>
+                </figure>
+            </div>
+            <div class="expect">
+                <h4>Ce que tu dois voir</h4>
+                <ul>
+                    <li><code>quality="10"</code> : détails bavés, aplats dans le ciel et la végétation. Environ 25 fois plus léger : 6 Ko contre 152 Ko en 1000 × 750 sur Cloudflare.</li>
+                    <li><code>quality="90"</code> : net.</li>
+                    <li>URL : <code>quality=10</code> et <code>quality=90</code> (Cloudflare, KeyCDN), <code>q_10</code> et <code>q_90</code> (Cloudinary).</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="case">
+            <h3>7. <code>format</code></h3>
+            <span class="props">width="300" height="400" format="…"</span>
+            <div class="row">
+                <figure class="shot">
+                    <twig:ux:image src="/uploads/Gros-Caillou.jpeg" alt="Gros Caillou" width="300" height="400" />
+                    <figcaption><strong>sans format</strong></figcaption>
+                </figure>
+                <figure class="shot">
+                    <twig:ux:image src="/uploads/Gros-Caillou.jpeg" alt="Gros Caillou" width="300" height="400" format="webp" />
+                    <figcaption><strong>format="webp"</strong></figcaption>
+                </figure>
+                <figure class="shot">
+                    <twig:ux:image src="/uploads/Gros-Caillou.jpeg" alt="Gros Caillou" width="300" height="400" format="jpeg" />
+                    <figcaption><strong>format="jpeg"</strong></figcaption>
+                </figure>
+            </div>
+            <div class="expect">
+                <h4>Ce que tu dois voir</h4>
+                <ul>
+                    <li>Sans format : <code>{{ auto_type }}</code>{{ provider == 'keycdn' ? ', KeyCDN ne négocie pas le format' }}.</li>
+                    <li><code>webp</code> : <code>image/webp</code>. <code>jpeg</code> : <code>image/jpeg</code>.</li>
+                    <li>Même rendu visuel pour les 3, poids différents. Mesuré sur Cloudflare en 600 × 800 : avif 138 Ko, jpeg 144 Ko, webp 178 Ko.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="case">
+            <h3>8. <code>operations</code> par provider</h3>
+            <span class="props">width="300" height="300" :operations="{cloudflare: {…}, cloudinary: {…}, keycdn: {…}}"</span>
+            <div class="row">
+                <figure class="shot">
+                    <twig:ux:image src="/uploads/Gros-Caillou.jpeg" alt="Gros Caillou" width="300" height="300"
+                        :operations="{cloudflare: {saturation: 0}, cloudinary: {e: 'grayscale'}, keycdn: {grayscale: 1}}" />
+                    <figcaption><strong>niveaux de gris</strong></figcaption>
+                </figure>
+                <figure class="shot">
+                    <twig:ux:image src="/uploads/Gros-Caillou.jpeg" alt="Gros Caillou" width="300" height="300"
+                        :operations="{cloudflare: {blur: 20}, cloudinary: {e: 'blur:400'}, keycdn: {blur: 5}}" />
+                    <figcaption><strong>flou</strong></figcaption>
+                </figure>
+                <figure class="shot">
+                    <twig:ux:image src="/uploads/Gros-Caillou.jpeg" alt="Gros Caillou" width="300" height="300"
+                        :operations="{cloudflare: {rotate: 90}, cloudinary: {a: 90}, keycdn: {rotate: 90}}" />
+                    <figcaption><strong>rotation 90°</strong></figcaption>
+                </figure>
+            </div>
+            <div class="expect">
+                <h4>Ce que tu dois voir</h4>
+                <ul>
+                    <li>Noir et blanc, très flou, puis photo couchée sur le côté.</li>
+                    <li>Seules les opérations du provider actif apparaissent dans l'URL, par exemple <code>saturation=0</code>, <code>blur=20</code> et <code>rotate=90</code> sur Cloudflare.</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <div class="wrap">
+        <h2>Autres API</h2>
+
+        <section class="case">
+            <h3>9. <code>&lt;twig:ux:picture&gt;</code></h3>
+            <span class="props">width="600" height="450"</span>
+            <figure class="shot">
+                <twig:ux:picture src="/uploads/Col-de-Saint-Bonnet.jpeg" alt="Col de Saint-Bonnet" width="600" height="450" />
+                <figcaption><strong>&lt;picture&gt;</strong></figcaption>
+            </figure>
+            <div class="expect">
+                <h4>Ce que tu dois voir</h4>
+                <ul>
+                    {% if provider == 'keycdn' %}
+                        <li>HTML : <code>&lt;picture&gt;</code> avec 2 <code>&lt;source&gt;</code> (webp, jpeg), puis <code>&lt;img&gt;</code>.</li>
+                        <li>Le navigateur prend la 1re source qu'il sait lire : <code>image/webp</code>.</li>
+                    {% else %}
+                        <li>HTML : <code>&lt;picture&gt;</code> avec 3 <code>&lt;source&gt;</code> (avif, webp, jpeg), puis <code>&lt;img&gt;</code>.</li>
+                        <li>Le navigateur prend la 1re source qu'il sait lire : <code>image/avif</code>, avec le format écrit en clair dans l'URL au lieu de <code>auto</code>.</li>
+                    {% endif %}
+                </ul>
+            </div>
+        </section>
+
+        <section class="case">
+            <h3>10. <code>preset</code></h3>
+            <span class="props">preset "thumbnail" = width: 300, height: 300, quality: 50 (config/packages/ux_image.yaml)</span>
+            <div class="row">
+                <figure class="shot">
+                    <twig:ux:image src="/uploads/Col-de-Saint-Bonnet.jpeg" alt="Col de Saint-Bonnet" preset="thumbnail" />
+                    <figcaption><strong>preset="thumbnail"</strong></figcaption>
+                </figure>
+                <figure class="shot">
+                    <twig:ux:image src="/uploads/Col-de-Saint-Bonnet.jpeg" alt="Col de Saint-Bonnet" preset="thumbnail" width="150" />
+                    <figcaption><strong>preset="thumbnail" width="150"</strong></figcaption>
+                </figure>
+            </div>
+            <div class="expect">
+                <h4>Ce que tu dois voir</h4>
+                <ul>
+                    <li><code>preset="thumbnail"</code> : carré 300 × 300, la qualité 50 apparaît dans l'URL.</li>
+                    <li>Avec <code>width="150"</code> : 150 × 300. Le template remplace la largeur et garde la hauteur du preset, donc le ratio change.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="case">
+            <h3>11. <code>ux_image_url()</code> en image de fond</h3>
+            <span class="props">ux_image_url('/uploads/Col-de-Saint-Bonnet.jpeg', {width: 2200, height: 600})</span>
+            {% set banner_url = ux_image_url('/uploads/Col-de-Saint-Bonnet.jpeg', {width: 2200, height: 600}) %}
+            <figure class="shot">
+                <div class="banner" data-bg="{{ banner_url }}" style="background-image: url('{{ banner_url }}')"></div>
+                <figcaption><strong>background-image</strong></figcaption>
+            </figure>
+            <div class="expect">
+                <h4>Ce que tu dois voir</h4>
+                <ul>
+                    <li>Une seule URL : pas de <code>srcset</code>, le navigateur ne choisit rien.</li>
+                    <li>Format d'origine, <code>image/jpeg</code> : contrairement au composant, <code>ux_image_url()</code> n'ajoute pas <code>format=auto</code>.</li>
+                    <li>Fichier 2200 × 600, net sur Retina tant que le bandeau ne dépasse pas 1100 px de large.</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        (() => {
+            const ACCEPT = 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8';
+            performance.setResourceTimingBufferSize(1000);
+
+            const el = (tag, className, text) => {
+                const node = document.createElement(tag);
+                node.className = className;
+                node.textContent = text;
+                return node;
+            };
+
+            const pixels = (url) => {
+                const probe = new Image();
+                probe.src = url;
+                return probe.decode().then(() => [probe.naturalWidth, probe.naturalHeight]);
+            };
+
+            const typeAndWeight = async (url) => {
+                const entry = performance.getEntriesByName(url).at(-1);
+                if (entry?.contentType) {
+                    return [entry.contentType, entry.encodedBodySize];
+                }
+                try {
+                    const response = await fetch(url, { method: 'HEAD', headers: { Accept: ACCEPT } });
+                    return [response.headers.get('content-type') ?? 'type ?', entry?.encodedBodySize || Number(response.headers.get('content-length'))];
+                } catch {
+                    return ['type ?', entry?.encodedBodySize];
+                }
+            };
+
+            const prettyHtml = (node) => node.outerHTML
+                .replace(/ (?=[a-z-]+=")/g, '\n    ')
+                .replace(/, (?=\S+ \d+w)/g, ',\n        ');
+
+            const measure = async (figure) => {
+                const img = figure.querySelector('img');
+                const target = img ?? figure.querySelector('[data-bg]');
+                const url = img ? img.currentSrc : target.dataset.bg;
+                if (!url) {
+                    return;
+                }
+
+                const [[width, height], [type, bytes]] = await Promise.all([pixels(url), typeAndWeight(url)]);
+                const dpr = window.devicePixelRatio;
+                const box = target.getBoundingClientRect();
+                const fit = img ? getComputedStyle(img).objectFit : 'cover';
+                const scale = (fit === 'contain' ? Math.min : Math.max)(box.width / width, box.height / height);
+                const sharp = scale * dpr <= 1.02;
+
+                const output = figure.querySelector('.measure') ?? figure.querySelector('figcaption').appendChild(el('div', 'measure', ''));
+                const shown = el('div', '', `affiché ${Math.round(box.width)} × ${Math.round(box.height)} px × DPR ${dpr} `);
+                shown.append(el('span', sharp ? 'ok' : 'warn', sharp ? '✓ net' : '⚠ pas assez de pixels'));
+                const children = [
+                    el('div', '', `fichier ${width} × ${height} px · ${type} · ${bytes ? `${Math.round(bytes / 1024)} Ko` : 'poids ?'}`),
+                    shown,
+                    el('div', 'url', url),
+                ];
+                if (img) {
+                    const details = el('details', '', '');
+                    details.open = output.querySelector('details')?.open ?? false;
+                    details.append(el('summary', '', 'HTML généré'), el('pre', '', prettyHtml(img.closest('picture') ?? img)));
+                    children.push(details);
+                }
+                output.replaceChildren(...children);
+            };
+
+            const figures = [...document.querySelectorAll('.shot')];
+            const run = () => {
+                document.querySelector('[data-dpr]').textContent = window.devicePixelRatio;
+                document.querySelector('[data-viewport]').textContent = window.innerWidth;
+                figures.forEach((figure) => measure(figure).catch(() => {}));
+            };
+
+            figures.forEach((figure) => figure.querySelector('img')?.addEventListener('load', () => measure(figure).catch(() => {})));
+            let timer;
+            window.addEventListener('resize', () => {
+                clearTimeout(timer);
+                timer = setTimeout(run, 300);
+            });
+            run();
+        })();
+    </script>
+{% endblock %}

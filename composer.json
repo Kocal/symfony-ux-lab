@@ -45,9 +45,12 @@
         "symfony/ux-autocomplete": "3.x-dev",
         "symfony/ux-calendar-link": "3.x-dev",
         "symfony/ux-chartjs": "3.x-dev",
+        "symfony/ux-cloudflare-image": "3.x-dev",
+        "symfony/ux-cloudinary-image": "3.x-dev",
         "symfony/ux-google-map": "3.x-dev",
         "symfony/ux-icons": "3.x-dev",
         "symfony/ux-image": "3.x-dev",
+        "symfony/ux-keycdn-image": "3.x-dev",
         "symfony/ux-leaflet-map": "3.x-dev",
         "symfony/ux-live-component": "3.x-dev",
         "symfony/ux-map": "3.x-dev",
@@ -136,6 +139,7 @@
     "repositories": [
         {"name": "ux-image", "type": "path", "url": "../../symfony/ux/src/Image", "options": {"symlink": true}},
         {"name": "ux-cloudflare-image", "type": "path", "url": "../../symfony/ux/src/Image/src/Bridge/Cloudflare", "options": {"symlink": true}},
+        {"name": "ux-cloudinary-image", "type": "path", "url": "../../symfony/ux/src/Image/src/Bridge/cloudinary", "options": {"symlink": true}},
         {"name": "ux-glide-image", "type": "path", "url": "../../symfony/ux/src/Image/src/Bridge/Glide", "options": {"symlink": true}},
         {"name": "ux-keycdn-image", "type": "path", "url": "../../symfony/ux/src/Image/src/Bridge/KeyCdn", "options": {"symlink": true}},
         {
