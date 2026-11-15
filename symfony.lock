@@ -336,6 +336,24 @@
     "symfony/ux-chartjs": {
         "version": "2.x-dev"
     },
+    "symfony/ux-cloudflare-image": {
+        "version": "3.9999999",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "3.6",
+            "ref": "c796ecf71fe552bdd81b01e1e87385f1ee7a6f7f"
+        }
+    },
+    "symfony/ux-cloudinary-image": {
+        "version": "3.9999999",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "3.6",
+            "ref": "59a3e634ae39c5df4f8f5be18319730147cf95b2"
+        }
+    },
     "symfony/ux-google-map": {
         "version": "2.9999999",
         "recipe": {
@@ -359,6 +377,24 @@
     },
     "symfony/ux-image": {
         "version": "3.x-dev"
+    },
+    "symfony/ux-imgix-image": {
+        "version": "3.9999999",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "3.6",
+            "ref": "3da9d2468ecf56aab52046d07c48b6a641a82d04"
+        }
+    },
+    "symfony/ux-keycdn-image": {
+        "version": "3.9999999",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "3.6",
+            "ref": "dd9a1c45b2c506a3eb8f83060d3ef759cbd475e1"
+        }
     },
     "symfony/ux-leaflet-map": {
         "version": "2.9999999",

@@ -51,6 +51,7 @@
         "symfony/ux-icons": "3.x-dev",
         "symfony/ux-image": "3.x-dev",
         "symfony/ux-imgix-image": "3.x-dev",
+        "symfony/ux-ipx-image": "3.x-dev",
         "symfony/ux-keycdn-image": "3.x-dev",
         "symfony/ux-leaflet-map": "3.x-dev",
         "symfony/ux-live-component": "3.x-dev",
@@ -143,6 +144,7 @@
         {"name": "ux-cloudinary-image", "type": "path", "url": "../../symfony/ux/src/Image/src/Bridge/cloudinary", "options": {"symlink": true}},
         {"name": "ux-glide-image", "type": "path", "url": "../../symfony/ux/src/Image/src/Bridge/Glide", "options": {"symlink": true}},
         {"name": "ux-imgix-image", "type": "path", "url": "../../symfony/ux/src/Image/src/Bridge/Imgix", "options": {"symlink": true}},
+        {"name": "ux-ipx-image", "type": "path", "url": "../../symfony/ux/src/Image/src/Bridge/Ipx", "options": {"symlink": true}},
         {"name": "ux-keycdn-image", "type": "path", "url": "../../symfony/ux/src/Image/src/Bridge/KeyCdn", "options": {"symlink": true}},
         {
             "name": "ux-calendar-link",

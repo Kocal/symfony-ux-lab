@@ -19,6 +19,16 @@ services:
       # - ./docker/db/data:/var/lib/postgresql/data:rw
 ###< doctrine/doctrine-bundle ###
 
+  ipx:
+    image: node:26-alpine
+    ports: [3000]
+    command: npx --yes ipx@4 serve
+    environment:
+      IPX_FS_DIR: /srv/public
+      IPX_ALLOWED_MODIFIERS: width,height,resize,fit,format,quality
+    volumes:
+      - ./public:/srv/public:ro
+
 ###> symfony/mercure-bundle ###
 #  mercure:
 #    image: dunglas/mercure

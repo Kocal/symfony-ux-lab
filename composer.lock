@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3bfa1902305bdcf0505a8771f07725b4",
+    "content-hash": "d8f822a967144266f44ada6fbc25d48c",
     "packages": [
         {
             "name": "carbonphp/carbon-doctrine-types",
@@ -8138,6 +8138,60 @@
             }
         },
         {
+            "name": "symfony/ux-ipx-image",
+            "version": "3.x-dev",
+            "dist": {
+                "type": "path",
+                "url": "../../symfony/ux/src/Image/src/Bridge/Ipx",
+                "reference": "b6c0eb42c98ba70f9c6773a754df61f0d7d839c6"
+            },
+            "require": {
+                "php": ">=8.4",
+                "symfony/ux-image": "^3.7"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^12.0",
+                "spatie/phpunit-snapshot-assertions": "^5.2.3"
+            },
+            "type": "symfony-ux-image-bridge",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\UX\\Image\\Bridge\\Ipx\\": "src/"
+                },
+                "exclude-from-classmap": []
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Symfony\\UX\\Image\\Bridge\\Ipx\\Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hugo Alliaume",
+                    "email": "hugo@alliau.me"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony UX Image IPX Bridge",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "image",
+                "ipx",
+                "responsive",
+                "symfony-ux"
+            ],
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
             "name": "symfony/ux-keycdn-image",
             "version": "3.x-dev",
             "dist": {
@@ -12269,6 +12323,7 @@
         "symfony/ux-icons": 20,
         "symfony/ux-image": 20,
         "symfony/ux-imgix-image": 20,
+        "symfony/ux-ipx-image": 20,
         "symfony/ux-keycdn-image": 20,
         "symfony/ux-leaflet-map": 20,
         "symfony/ux-live-component": 20,
